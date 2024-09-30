@@ -1,0 +1,175 @@
+//package aula_03;
+//import java.util.Scanner;
+//public class Main {
+//
+//	public static void main(String[] args) {
+	
+		//Aula03 001
+		//Scanner bob = new Scanner (System.in); 
+		//double n;
+		//double n1;
+		//double m;
+		//System.out.println("Digite a Primeira nota:");
+		//n = bob.nextDouble();
+		//System.out.println("Digite a Segunda nota:");
+		//n1 = bob.nextDouble();
+		//m = (n + n1)/2;
+		//System.out.println("A média do aluno foi: "+ m);
+		//if ( m >= 6) {
+		//	System.out.println("O usuario foi aprovado!");
+		//} else {
+		//	System.out.println("O usuario foi reprovado!");
+		//}
+		
+		
+		//Aula03 002
+		//Scanner bob = new Scanner (System.in);
+		//int anoa;
+		//int ida;
+		//int anona;
+		//System.out.println("Digite o ano atual!");
+		//	anoa = bob.nextInt();
+		//System.out.println("Digite seu ano de nascimento!");
+		//	anona = bob.nextInt();
+		//	ida = anoa - anona;	
+		//if (ida >= 16 ){
+		//	System.out.println("O usuário pode votar!");
+		//} else {
+		//	System.out.println("O usuário não pode votar!");
+		//}
+		
+		
+		//Aula03 003
+		//Scanner bob = new Scanner (System.in);
+//		double n;
+//		double n1;
+//		double n2;
+//		double n3;
+//		double m;
+//		System.out.println("Digite a Primeira nota:");
+//			n = bob.nextDouble();
+//		System.out.println("Digite a Segunda nota:");
+//			n1 = bob.nextDouble();
+//		System.out.println("Digite a Terceira nota:");
+//			n2 = bob.nextDouble();
+//		System.out.println("Digite a Quarta nota:");
+//			n3 = bob.nextDouble();
+//			m = (n + n1 + n2 + n3 )/4;
+//		System.out.println("A média do aluno foi: "+ m);
+//		if ( m >= 6) {
+//			System.out.println("O usuario foi aprovado!");
+//		} else {
+//			System.out.println("O usuario foi reprovado!");
+//		}
+		
+		
+		//Aula03 004
+//		Scanner bob = new Scanner (System.in);
+//			double meter;
+//			double convert;
+//		System.out.println("Digite os metros:");
+//			cent = bob.nextDouble();
+//			convert = meter*100;
+//		System.out.println("Você possui: "+ convert + " m");
+		
+		
+		//Aula03 005
+//		Scanner bob = new Scanner (System.in);
+//			double h;
+//			double sal;
+//		System.out.println("Quanto você ganha por hora");
+//			h = bob.nextDouble();
+//			sal = h*30;
+//		System.out.println("O seu salário é: "+ sal + "R$");
+		
+		
+		//Aula03 006
+//		Scanner bob = new Scanner (System.in);
+//			double x;
+//		System.out.println("Qual o preço da bolsa?");
+//			x = bob.nextDouble();
+//		if (x > 50 && x < 70)  {
+//			System.out.println("O valor está dentro do orçamento");
+//		} else {
+//			System.out.println("O valor não está dentro do orçamento");
+//		}
+		
+		
+		//Aula03 007
+//		Scanner bob = new Scanner (System.in);
+//			int n;
+//			int n1;
+//		System.out.println("Digite o primeiro número:");
+//			n = bob.nextInt();
+//		System.out.println("Digite o segundo número:");
+//			n1 = bob.nextInt();
+//		if (n > n1) {
+//			System.out.println("O primeiro é maior que o segundo ");
+//		} else {
+//			System.out.println("O segundo é maior que o primeiro");
+//		}
+		
+		
+		//Aula03 008
+//		Scanner bob = new Scanner (System.in);
+//			int n;
+//		System.out.println("Digite o númeral:");
+//			n = bob.nextInt();
+//		if (n < 0) {
+//			System.out.println("O número é negativo!");
+//		} else {
+//			System.out.println("O número é positivo!");
+//		}
+				
+		//Aula03 009
+//		Scanner bob = new Scanner (System.in);
+//			double sal;
+//		System.out.println("Digite seu salário base:");
+//			sal = bob.nextDouble();
+//			double gra = sal * 0.08;
+//			double imp = sal * 0.11;
+//			double nsal = imp - gra;
+//		System.out.println("O seu salário com gratificação de 8% fica: "+ nsal+"R$");
+//		
+		
+		
+		//Aula03 010
+//		Scanner bob = new Scanner (System.in);
+//			int anoa; 
+//			int ida;
+//			int anona;
+//			String nome;
+//		System.out.println("Digite o ano atual!");
+//			anoa = bob.nextInt();
+//		System.out.println("Digite seu nome:");
+//			nome = bob.nextLine();
+//		System.out.println("Digite seu a no de nascimento!");
+//			anona = bob.nextInt();
+//			ida = anoa - anona;	
+//		System.out.println("Você tem: "+ ida);
+//			if (ida >= 18 ){
+//				System.out.println(nome+ " A entra é permitida!");
+//			} else {
+//				System.out.println(nome+ "A entrada não é permitida!");
+//			}
+		
+		
+		//Aula03 011
+//		Scanner bob = new Scanner (System.in);
+//			double sal;
+//			double pres;
+//			double var;
+//		System.out.println("Digite o seu salário");
+//			sal = bob.nextDouble();
+//		System.out.println("Digite o valor da prestação");
+//			pres = bob.nextDouble();
+//		var = (sal + pres)/100;
+//			if (var > 20) {
+//				System.out.println("A prestação é invalida");
+//			} else {
+//				System.out.println("A prestação é valida");
+//			}
+			
+//	}
+//
+//}
