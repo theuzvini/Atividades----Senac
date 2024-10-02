@@ -1,0 +1,256 @@
+Main--
+------------------------------------------------------
+package aula04;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Login log = new Login();
+		log.Entrar();
+
+	}
+
+}
+
+Login--
+------------------------------------------------------
+package aula04;
+import java.util.Scanner;
+public class Login {
+	Scanner bob = new Scanner(System.in);
+//	Entrada em um sistema
+	//     = 
+//	Login e senha
+	//public = Acesso público.
+	//void = Sem retorno.
+	//Entrar = Verbo conector.
+	public void Entrar() {
+		String login, senha;
+		String login1 = "Matheus";
+		String senha1 = "01234";
+	System.out.println("Entre com seu Login:");
+		login = bob.nextLine();
+	System.out.println("Entre com sua Senha:");
+		senha = bob.nextLine();
+		
+		if(login.equals(login1 ) && senha.equals(senha1)){
+			Bem();
+		} else {
+			System.out.println("Entrada Negada");
+		}
+	}
+	
+   public void Bem() {
+	     System.out.println("Bem-Vindo ao sistema Math");
+	     	e1();
+	     	e2();
+	     	e3();
+	     	e4();
+	     	e5();
+	     	e6();
+	     	e7();
+	     	e8();
+	     	e9();
+	     	e10();
+	     	e11();
+	     	
+   }
+
+   public void e1() {
+		double n;
+		double n1;
+		double m;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 01");
+		System.out.println("");
+		System.out.println("Digite a Primeira nota:");
+		n = bob.nextDouble();
+		System.out.println("Digite a Segunda nota:");
+		n1 = bob.nextDouble();
+		m = (n + n1)/2;
+		System.out.println("A média do aluno foi: "+ m);
+		if ( m >= 6) {
+			System.out.println("O usuario foi aprovado!");
+		} else {
+			System.out.println("O usuario foi reprovado!");
+		};	
+   }
+   public void e2() {
+		int anoa;
+		int ida;
+		int anona;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 02");
+		System.out.println("");
+		System.out.println("Digite o ano atual!");
+			anoa = bob.nextInt();
+		System.out.println("Digite seu ano de nascimento!");
+			anona = bob.nextInt();
+			ida = anoa - anona;	
+		if (ida >= 16 ){
+			System.out.println("O usuário pode votar!");
+		} else {
+			System.out.println("O usuário não pode votar!");
+		}
+   }
+   public void e3() {
+		double n;
+		double n1;
+		double n2;
+		double n3;
+		double m;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 03");
+		System.out.println("");
+		System.out.println("Digite a Primeira nota:");
+			n = bob.nextDouble();
+		System.out.println("Digite a Segunda nota:");
+			n1 = bob.nextDouble();
+		System.out.println("Digite a Terceira nota:");
+			n2 = bob.nextDouble();
+		System.out.println("Digite a Quarta nota:");
+			n3 = bob.nextDouble();
+			m = (n + n1 + n2 + n3 )/4;
+		System.out.println("A média do aluno foi: "+ m);
+		if ( m >= 6) {
+			System.out.println("O usuario foi aprovado!");
+		} else {
+			System.out.println("O usuario foi reprovado!");
+		}
+   }
+   public void e4() {
+		double meter;
+		double convert;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 04");
+		System.out.println("");
+	System.out.println("Digite os metros:");
+		meter = bob.nextDouble();
+		convert = meter*100;
+	System.out.println("Você possui: "+ convert + " cm");
+   }
+   public void e5() {
+		double h;
+		double sal;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 05");
+		System.out.println("");
+	System.out.println("Quanto você ganha por hora");
+		h = bob.nextDouble();
+		sal = h*30;
+	System.out.println("O seu salário é: "+ sal + "R$");
+   }
+   public void e6() {
+		//
+		double x;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 06");
+		System.out.println("");
+	System.out.println("Qual o preço da bolsa?");
+		x = bob.nextDouble();
+	if (x > 50 && x < 70)  {
+		System.out.println("O valor está dentro do orçamento");
+	} else {
+		System.out.println("O valor não está dentro do orçamento");
+	}
+   }
+   public void e7() {
+		//
+		int n;
+		int n1;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 07");
+		System.out.println("");
+	System.out.println("Digite o primeiro número:");
+		n = bob.nextInt();
+	System.out.println("Digite o segundo número:");
+		n1 = bob.nextInt();
+	if (n > n1) {
+		System.out.println("O primeiro é maior que o segundo ");
+	} else {
+		System.out.println("O segundo é maior que o primeiro");
+	}
+   }
+   public void e8() {
+		//
+		int n;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 08");
+		System.out.println("");
+	System.out.println("Digite o númeral:");
+		n = bob.nextInt();
+	if (n < 0) {
+		System.out.println("O número é negativo!");
+	} else {
+		System.out.println("O número é positivo!");
+	}
+   }
+   public void e9() {
+		//
+		double sal;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 09");
+		System.out.println("");
+	System.out.println("Digite seu salário base:");
+		sal = bob.nextDouble();
+		double gra = sal * 0.08;
+		double imp = sal * 0.11;
+		double nsal = sal + gra;
+		double ssal = nsal - imp;
+	System.out.println("O seu salário com gratificação de 8% fica: "+ nsal+"R$");
+   }
+   public void e10() {
+		//
+		int anoa; 
+		int ida;
+		int anona;
+		String nome;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 10");
+		System.out.println("");
+	System.out.println("Digite o ano atual!");
+		anoa = bob.nextInt();
+	System.out.println("Digite seu nome:");
+		nome = bob.nextLine();
+	System.out.println("Digite seu a no de nascimento!");
+		anona = bob.nextInt();
+		ida = anoa - anona;	
+	System.out.println("Você tem: "+ ida);
+		if (ida >= 18 ){
+			System.out.println(nome+ " A entra é permitida!");
+		} else {
+			System.out.println(nome+ "A entrada não é permitida!");
+		}
+   }
+   public void e11() {
+		//
+		double sal;
+		double pres;
+		double var;
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("ATIVIDADE 11");
+		System.out.println("");
+	System.out.println("Digite o seu salário");
+		sal = bob.nextDouble();
+	System.out.println("Digite o valor da prestação");
+		pres = bob.nextDouble();
+	var = (sal + pres)/100;
+		if (var > 20) {
+			System.out.println("A prestação é invalida");
+		} else {
+			System.out.println("A prestação é valida");
+		}
+   }
+   }
+
