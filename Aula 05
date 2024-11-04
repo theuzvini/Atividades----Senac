@@ -1,0 +1,56 @@
+Main
+----------------------------------------------------------------------------------------
+
+package aula_05;
+public class Main {
+
+	public static void main(String[] args) {
+		Calculadora log = new Calculadora();
+		log.Select();
+	}
+
+}
+
+------------------------------------------------------------------------------------------
+Calculadora
+------------------------------------------------------------------------------------------
+
+package aula_05;
+import java.util.Scanner;
+public class Calculadora {
+	Scanner Mat = new Scanner (System.in);
+	
+	public void Select() {
+		String Op;
+		String A = "+";
+		String B = "-";
+		String C = "*";
+		String D = "/";
+		int N, N1, x;
+		System.out.println("Operadores: ( + para Soma) ( - para Subtração) ( * para Multiplicação) ( / para Divisão)");
+		System.out.println("Digite o primeiro número:");
+		N = Mat.nextInt();
+		System.out.println("Digite o segundo número:");
+		N1 = Mat.nextInt();
+		System.out.println("Digite o operador aritmético:");
+		Op = Mat.next();
+		if(Op.equals(A)){
+			x = N + N1;
+			System.out.println("O valor da soma entre "+ N + " e "+ N1 + " é "+ x);
+		}
+		if(Op.equals(B)){
+			x = N - N1;
+			System.out.println("O valor da subtração entre "+ N + " e "+ N1 + " é "+ x);
+		}
+		if(Op.equals(C)){
+			x = N * N1;
+			System.out.println("O valor da multiplicação entre "+ N + " e "+ N1 + " é "+ x);
+		}
+		if(Op.equals(D)){
+			x = N / N1;
+			System.out.println("O valor da divisão entre "+ N + " e "+ N1 + " é "+ x);
+		}
+	}
+	
+
+}
