@@ -1,0 +1,90 @@
+Main
+-----------------------------------------------------------------------------------------------------------------------------
+
+package aula_06;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ContaBancaria log = new ContaBancaria();
+		log.Conta();
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+ContaBancaria
+-------------------------------------------------------------------------------------------------------------------------------
+
+package aula_06;
+import java.util.Scanner;
+public class ContaBancaria {
+	public static String N = "Matheus";
+	public static String S = "0102";
+	public static String C = "123.";
+	public static String B = "INTER";
+	public static double Sal = 0;
+	public static double valor;
+	Scanner mat =  new Scanner (System.in);
+		public void Conta() {
+			String Nome, Senha, CPF, BANCO;
+			System.out.println("LOGIN");
+			System.out.println("Digite o nome do titular Completo:");
+				Nome = mat.nextLine();
+			System.out.println("Digite a Senha do titular:");
+				Senha = mat.nextLine();
+			System.out.println("Digite o CPF do titular:");
+				CPF = mat.nextLine();
+			System.out.println("Digite o BANCO do titular:");
+				BANCO = mat.nextLine();
+			
+			if (Nome.equals(N) && Senha.equals(S) && CPF.equals(C) && BANCO.equals(B)) {
+				System.out.println("SUA ENTRADA FOI AUTORIZADA!");
+				Enter();
+			} else {
+				System.out.println("SUA ENTRADA FOI NEGADA!");
+			}
+		
+		}
+		public void Enter() {
+				String D;
+				String A = "Inserir Valor";
+				String C = "Retirar Valor";
+				System.out.println();
+			System.out.println("Nome:   "+ N);
+			System.out.println("Banco: "+ B);
+			System.out.println("Saldo:  "+ Sal);
+			System.out.println();
+			System.out.println("O que você deseja? (Inserir Valor) (Retirar Valor) : ");
+				D = mat.nextLine();
+			if (D.equals(A)) {
+				System.out.println("Qual o valor que deseja inserir?");
+				valor = mat.nextDouble();
+		
+			if (valor >=0) {
+				Sal = Sal + valor;
+				System.out.println("O valor foi de: "+ valor);
+				System.out.println("O seu saldo é de: "+ Sal);
+				Enter();
+			} else {
+				System.out.println("Não Aprovada, o valor é enor que zero.");
+				Enter();
+			}
+			}
+			if (D.equals(C)) {
+				System.out.println("Qual o valor que deseja retirar?");
+				valor = mat.nextDouble();		
+				if (valor <= Sal) {
+					Sal = Sal + valor;
+					System.out.println("O valor foi de: "+ valor);
+					System.out.println("O seu saldo é de: "+ Sal);
+					Enter();
+				} else {
+					System.out.println("Não Aprovada, o valor é maior que o saldo.");
+					Enter();
+				}
+
+			}
+			
+		}
+}
