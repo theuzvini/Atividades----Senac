@@ -1,0 +1,107 @@
+-----------------------------------------------------------------------------------
+Main
+
+package aula_07;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Estoque log = new Estoque();
+		log.Enter();
+	}
+
+}
+
+-------------------------------------------------------------------------------------
+Estoque.java
+
+package aula_07;
+import java.util.Scanner;
+public class Estoque {
+	Scanner mat = new Scanner (System.in); 
+	public static int Q;
+	public static int V;
+	public static String N;
+	public static Double P;
+	
+	public void Enter() {
+		String S;
+		String A = "1";
+		String B = "2";
+		String C = "3";
+		System.out.println("Olá, Bem Vindo!");
+		System.out.println("---------------------------");
+		System.out.println("Quantidade de produtos no estoque: "+ Q +" de 30");
+		System.out.println("Total de vendas realizadas: "+ V);
+		System.out.println("---------------------------");
+		System.out.println("");
+		System.out.println("Selecione: (1 = Inserir Produto) (2 = Vender Produto) (3 = Lista de Produtos no Estoque)");
+		S = mat.nextLine();
+		if (S.equals(A)) {
+			System.out.println("Você Escolheu Inserir Produtos");
+			if (Q == 30) {
+				System.out.println("O estoque está cheio!");
+				System.out.println("");
+				Enter();
+			} else {
+				Inserir();
+			}
+	
+		}
+		if (S.equals(B)) {
+			System.out.println("Você Escolheu Vender Produtos");
+			Vender();
+		}
+		if (S.equals(C)) {
+			System.out.println("Você Escolheu Ver lista de Produtos");
+			Listar();
+		}
+	}
+
+	public void Inserir() {
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("Adicionar Produtos");
+		System.out.println("Qual o Nome do Produto?: ");
+		N = mat.nextLine();
+		System.out.println("Qual o Preço por Unidade do Produto?: ");
+		P = mat.nextDouble();
+		System.out.println("Qual a Quantidade do Produto?: ");
+		Q = mat.nextInt();
+		System.out.println("--------------------");
+		Enter();	
+	}
+	
+	public void Vender() {
+		String Res;
+		int Qua;
+		System.out.println("");
+		System.out.println("");
+		System.out.println("--------------------");
+		System.out.println("Vender Produtos");
+		System.out.println("Qual o Nome do Produto?: ");
+		Res = mat.nextLine();
+			if (Res.equals(N)) {
+				System.out.println("Nome: " + N);
+				System.out.println("Preço U: " + P);
+				System.out.println("Quantidade: " + Q);
+				System.out.println("Você deseja vender quantos? " );
+				Qua = mat.nextInt();
+				if (Qua <= Q) {
+					Q = Q - Qua;
+				} else {
+					System.out.println("Não foi possivel, realizar a venda. ");
+				}
+			} else {
+
+			}
+		System.out.println("--------------------");
+	}
+
+	public void Listar() {
+		System.out.println("");
+}
+	
+}
+
+----------------------------------------------------------------------------------------------------
