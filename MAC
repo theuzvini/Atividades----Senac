@@ -1,0 +1,276 @@
+package Java;
+import java.util.Scanner;
+public class Task1 {
+Scanner mat = new Scanner (System.in);
+
+	public void Menu() {
+		int valor;
+		System.out.println("Digite a Questão que deseja saber: [1] [2] [3] [4] [5] [6] [7] [8]");
+		valor = mat.nextInt();
+		if (valor == 1) {
+			System.out.println("Bem-Vindo a Questão 1");
+			System.out.println("");
+			One();
+		}
+		if (valor == 2) {
+			System.out.println("Bem-Vindo a Questão 2");
+			System.out.println("");
+			Two();
+		}
+		if (valor == 3) {
+			System.out.println("Bem-Vindo a Questão 3");
+			System.out.println("");
+			Three();
+		}
+		if (valor == 4) {
+			System.out.println("Bem-Vindo a Questão 4");
+			System.out.println("");
+			For();
+		}
+		if (valor == 5) {
+			System.out.println("Bem-Vindo a Questão 5");
+			System.out.println("");
+			Five();
+		}
+		if (valor == 6) {
+			System.out.println("Bem-Vindo a Questão 6");
+			System.out.println("");
+			Six();
+		}
+		if (valor == 7) {
+			System.out.println("Bem-Vindo a Questão 7");
+			System.out.println("");
+			Seven();
+		}
+		if (valor == 8) {
+			System.out.println("Bem-Vindo a Questão 8");
+			System.out.println("");
+			Height();
+		}
+		if (valor > 8) {
+			System.out.println("Essa Questão Não Existe!");
+			System.out.println("");
+			Menu();
+		}
+	}
+	
+		public void One() {
+			
+		}
+		
+		public void Two() {
+			
+		}
+		
+		public void Three() {
+			System.out.println("------------------------------------");
+			for (int i = 1; i <= 20; i++) {
+				System.out.println("Eu, Davi gosto de estudar Algoritmos!");
+			}
+			System.out.println("------------------------------------");
+			System.out.println("");
+			System.out.println("Codigo:");
+			System.out.println("");
+			System.out.println("for (int i = 1; i <= 20; i++) {");
+			System.out.println("	System.out.println(\"Eu, Davi gosto de estudar Algoritmos!\");");
+			System.out.println("}");
+		}
+		
+		public void For() {
+			int a;int b;
+			int c;int d;
+			int e;int f;
+			int g;int h;
+			int i;int j;
+			int k;int l;
+			int m;int n;
+			int o;int p;
+			int q;int r;
+			int s;int t;
+			int qt;
+			qt = 0;
+			System.out.println("------------------------------------");
+			System.out.println("Insira 20 valores:");
+			a = mat.nextInt(); b = mat.nextInt();
+			c = mat.nextInt(); d = mat.nextInt();
+			e = mat.nextInt(); f = mat.nextInt();
+			g = mat.nextInt(); h = mat.nextInt();
+			i = mat.nextInt(); j = mat.nextInt();
+			k = mat.nextInt(); l = mat.nextInt();
+			m = mat.nextInt(); n = mat.nextInt();
+			o = mat.nextInt(); p = mat.nextInt();
+			q = mat.nextInt(); r = mat.nextInt();
+			s = mat.nextInt(); t = mat.nextInt();
+			
+			if (a > 8) {
+				qt = qt+1;
+			}
+			if (b > 8) {
+				qt = qt+1;
+			}
+			if (c > 8) {
+				qt = qt+1;
+			}
+			if (d > 8) {
+				qt = qt+1;
+			}
+			if (e > 8) {
+				qt = qt+1;
+			}
+			if (f > 8) {
+				qt = qt+1;
+			}
+			if (g > 8) {
+				qt = qt+1;
+			}
+			if (h > 8) {
+				qt = qt+1;
+			}
+			if (i > 8) {
+				qt = qt+1;
+			}
+			if (j > 8) {
+				qt = qt+1;
+			}
+			if (k > 8) {
+				qt = qt+1;
+			}
+			if (l > 8) {
+				qt = qt+1;
+			}
+			if (m > 8) {
+				qt = qt+1;
+			}
+			if (n > 8) {
+				qt = qt+1;
+			}
+			if (o > 8) {
+				qt = qt+1;
+			}
+			if (p > 8) {
+				qt = qt+1;
+			}
+			if (q > 8) {
+				qt = qt+1;
+			}
+			if (r > 8) {
+				qt = qt+1;
+			}
+			if (s > 8) {
+				qt = qt+1;
+			}
+			if (t > 8) {
+				qt = qt+1;
+			}
+			System.out.println("A quantidade de números maiores que 8 são: "+ qt);
+			System.out.println("------------------------------------");
+			System.out.println("");
+			System.out.println("Codigo:");
+			System.out.println("");
+			System.out.println("int a;int b;");
+			System.out.println("int c;int d;");
+			System.out.println("int e;int f;");
+			System.out.println("int g;int h;");
+			System.out.println("int i;int j;");
+			System.out.println("int k;int l;");
+			System.out.println("int m;int n;");
+			System.out.println("int o;int p;");
+			System.out.println("int q;int r;");
+			System.out.println("int s;int t;");
+			System.out.println("int qt;");
+			System.out.println("qt = 0;");
+			System.out.println("System.out.println(\"------------------------------------\");");
+			System.out.println("System.out.println(\"Insira 20 valores:\");");
+			System.out.println("a = mat.nextInt(); b = mat.nextInt();");
+			System.out.println("c = mat.nextInt(); d = mat.nextInt();");
+			System.out.println("e = mat.nextInt(); f = mat.nextInt();");
+			System.out.println("g = mat.nextInt(); h = mat.nextInt();");
+			System.out.println("i = mat.nextInt(); j = mat.nextInt();");
+			System.out.println("k = mat.nextInt(); l = mat.nextInt();");
+			System.out.println("m = mat.nextInt(); n = mat.nextInt();");
+			System.out.println("o = mat.nextInt(); p = mat.nextInt();");
+			System.out.println("q = mat.nextInt(); r = mat.nextInt();");
+			System.out.println("s = mat.nextInt(); t = mat.nextInt();");
+			System.out.println("");
+			System.out.println("if (a > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (b > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (c > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (d > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (e > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (f > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (g > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (h > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (h > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (i > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (j > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (k > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (l > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (m > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (n > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (o > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (p > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (q > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (r > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (s > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+			System.out.println("if (t > 8) {");
+			System.out.println("	qt = qt+1;");
+			System.out.println("}");
+		}
+		
+		public void Five() {
+			
+		}
+		
+		public void Six() {
+			
+		}
+		
+		public void Seven() {
+			
+		}
+		
+		public void Height() {
+			
+		}
+
+}
