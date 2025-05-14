@@ -145,6 +145,10 @@ import java.util.Scanner;
 public class Produtos {
 Scanner text = new Scanner (System.in);
 int Logi;
+int quant;
+double valor;
+double valortot;
+String[] item;
 
 	public void Itens() {
 		System.out.println("");
@@ -172,11 +176,13 @@ int Logi;
 	}
 	
 	public void Utensilios() {
-		System.out.println("Utensilhos de Metal");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("UTENSILIOS");
 		System.out.println("-------------------");
 		System.out.println("Espátula de silicone | Insira [1] para ver");
 		System.out.println("");
-		System.out.println("Colher de pau ou silicone | Insira [2] para ver");
+		System.out.println("Colher de pau | Insira [2] para ver");
 		System.out.println("");
 		System.out.println("Peneiras | Insira [3] para ver");
 		System.out.println("");
@@ -219,6 +225,156 @@ int Logi;
 		System.out.println("Coador de café | Insira [23] para ver");
 		System.out.println("");
 		System.out.println("-------------------");
+		System.out.println("Insira o código do produto que deseja ver:");
+		Logi = text.nextInt();
+		switch (Logi) {
+		case 1: {
+			quant = 1;
+			valor = 21.00; 
+			valortot = valor * quant;
+			item[0] = "Espátula de silicone";
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Espátula de Silicone ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+		}
+		case 2: {
+			quant = 1;
+			valor = 14.00; 
+			valortot = valor * quant;
+			item[0] = "Colher de Pau";
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Colher de Pau ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}		
+		}
+		case 3: {
+			quant = 2;
+			valor = 17.00; 
+			valortot = valor * quant;
+			item[0] = "Peneira Média";
+			item[1] = "Peneira Pequena";
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Peneiras ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[11]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+		}
+		case 4: {
+			
+		}
+		case 5: {
+			
+		}
+		case 6: {
+			
+		}
+		case 7: {
+			
+		}
+		case 8: {
+			
+		}
+		case 9: {
+			
+		}
+		case 10: {
+			
+		}
+		case 11: {
+			
+		}
+		case 12: {
+			
+		}
+		case 13: {
+			
+		}
+		case 14: {
+			
+		}
+		case 15: {
+			
+		}
+		case 16: {
+			
+		}
+		case 17: {
+			
+		}
+		case 18: {
+			
+		}
+		case 19: {
+			
+		}
+		case 20: {
+			
+		}
+		case 21: {
+			
+		}
+		case 22: {
+			
+		}
+		case 23: {
+			
+		}
+		}
 	}
 	
 	public void Panelas() {
@@ -228,6 +384,7 @@ int Logi;
 		System.out.println("No momento essa ação não está funcionado!");
 	}
 }
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
