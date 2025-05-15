@@ -1,0 +1,959 @@
+Java Project = Java_14_05_25
+Package = Pacote
+Class = Main; Login; Produtos; Pagamento; Confirmar; Envio; Nota; module-info
+
+Main
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package Pacote;
+
+public class main {
+
+	public static void main(String[] args) {
+		login log = new login();
+		log.Iniciar();
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Login
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package Pacote;
+import java.util.Scanner;
+
+public class login {
+Scanner text = new Scanner (System.in);
+public String N;
+private String E;
+private String P;
+public String getN() {
+	return N;
+}
+public void setN(String N) {
+    this.N = N;
+}
+
+public String getE() {
+	return E;
+}
+public String getNP() {
+	return P;
+}
+String Name;
+String Email;
+String Pass;
+String Logi;
+
+
+	public void Iniciar() {
+		int a;
+		System.out.println("Olá! Bem-Vindo ao Mix Mateus");
+		System.out.println("");
+		System.out.println("------------------------------------");
+		System.out.println("VOCÊ JÁ POSSUI CONTA?");
+		System.out.println("Insira [1] para CADASTRAR");
+		System.out.println("Insira [2] para LOGAR");
+		System.out.println("_____");
+		a = text.nextInt();
+		System.out.println("------------------------------------");
+		if (a == 1) {
+			Cadastrar();
+		}
+		if (a == 2) {
+			Logar();
+		}
+		if (a != 1 & a != 2) {
+			Iniciar();
+		}
+	}
+	
+	private void Cadastrar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Ainda não tem uma conta?");
+		System.out.println("");
+		System.out.println("------------------------------------");
+		System.out.println("CADASTRAR CONTA");
+		System.out.println("Insira seu NOME COMPLETO");
+		Name = text.next();
+		N = Name;
+		System.out.println("Insira um EMAIL");
+		Email = text.next();
+		E = Email;
+		System.out.println("Insira uma SENHA");
+		Pass = text.next();
+		P = Pass;
+		System.out.println("------------------------------------");
+		System.out.println("INSERIR [Sim] [Não]");
+		Logi = text.next();
+		switch (Logi) {
+		case "Sim": {
+			Iniciar();
+		}
+		case "sim": {
+			Iniciar();
+		}
+		case "Não": {
+			N = null;
+			E = null;
+			P = null;
+			Name = null;
+			Pass = null;
+			Email = null;
+			Iniciar();
+		}
+		case "não": {
+			N = null;
+			E = null;
+			P = null;
+			Name = null;
+			Pass = null;
+			Email = null;
+			Iniciar();
+		}
+		}
+	}
+	
+	private void Logar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Já tem uma conta?");
+		System.out.println("");
+		System.out.println("------------------------------------");
+		System.out.println("LOGAR CONTA");
+		System.out.println("Insira seu EMAIL");
+		Email = text.next();
+		System.out.println("Insira sua SENHA");
+		Pass = text.next();
+		System.out.println("------------------------------------");
+		System.out.println("INSERIR [Sim] [Não]");
+		Logi = text.next();
+		switch (Logi) {
+		case "Sim": {
+			if (Email.equals(E) & Pass.equals(P)) {
+				Menu();
+			} else {
+				System.out.println("Email ou Senha estão incorretos.");
+				Iniciar();
+			}
+		}
+		case "sim": {
+			if (Email.equals(E) & Pass.equals(P)) {
+				Menu();
+			} else {
+				System.out.println("Email ou Senha estão incorretos.");
+				Iniciar();
+			}
+		}
+		case "Não": {
+			Iniciar();
+		}
+		case "não": {
+			Iniciar();
+		}
+		}
+	}
+	
+	public void Menu() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Olá! "+ getN() +" Bem-Vindo ao Mix Mateus");
+		System.out.println("");
+		System.out.println("------------------------------------");
+		System.out.println("Insira [1] para ver Produtos");
+		System.out.println("");
+		System.out.println("Insira [2] para ver Suporte");
+		System.out.println("");
+		System.out.println("Insira [3] para ver Pagamentos");
+		System.out.println("------------------------------------");
+		System.out.println("O que deseja?");
+		Logi = text.next();
+		switch (Logi) {
+		case "1": {
+			produtos log = new produtos();
+			log.Itens();
+		}
+		case "2": {
+			
+		}
+		case "3": {
+			
+		}
+		}
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Produtos
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package Pacote;
+import java.util.Scanner;
+
+public class produtos {
+Scanner text = new Scanner (System.in);
+int Logi;
+int quant;
+double valor;
+double valortot;
+String[] item;
+login log = new login();
+String n = log.setN();
+
+	public void Itens() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Olá "+ n);
+		System.out.println("-------------------------------");
+		System.out.println("      Preço Baixo é aqui!");
+		System.out.println("--------------------------------");
+		System.out.print("Ver:");
+		System.out.println(" [1] Utensilios   [2] Panelas   [3] Formas");
+		System.out.println("------------------------------------------");
+		System.out.println("Voltar para Menu: [0]");
+		Logi = text.nextInt();
+		if (Logi == 0) {
+			log.Menu();
+		}
+		if (Logi == 1) {
+			Utensilios();
+		}
+		if (Logi == 2) {
+			Panelas();
+		}
+		if (Logi == 3) {
+			Formas();
+		}
+		if (Logi != 1 & Logi != 2 & Logi != 3) {
+			Itens();
+		}
+	}
+	
+	public void Utensilios() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("UTENSILIOS");
+		System.out.println("-------------------------------------------------------");
+		System.out.println("      Espátula de silicone        | Insira [1] para ver");
+		System.out.println("");
+		System.out.println("      Colher de pau               | Insira [2] para ver");
+		System.out.println("");
+		System.out.println("      Peneiras                    | Insira [3] para ver");
+		System.out.println("");
+		System.out.println("      Tábua de corte              | Insira [4] para ver");
+		System.out.println("");
+		System.out.println("      Rolo para abrir massas      | Insira [5] para ver");
+		System.out.println("");
+		System.out.println("      Pinça                       | Insira [6] para ver");
+		System.out.println("");
+		System.out.println("      Conjunto de medidores       | Insira [7] para ver");
+		System.out.println("");
+		System.out.println("      Xícara de medidas           | Insira [8] para ver");
+		System.out.println("");
+		System.out.println("      Saca-rolhas                 | Insira [9] para ver");
+		System.out.println("");
+		System.out.println("      Abridor de latas            | Insira [10] para ver");
+		System.out.println("");
+		System.out.println("      Abridor de garrafas         | Insira [11] para ver");
+		System.out.println("");
+		System.out.println("      Tesoura                     | Insira [12] para ver");
+		System.out.println("");
+		System.out.println("      Ralador                     | Insira [13] para ver");
+		System.out.println("");
+		System.out.println("      Espremedor de alho          | Insira [14] para ver");
+		System.out.println("");
+		System.out.println("      Conjunto de facas           | Insira [15] para ver");
+		System.out.println("");
+		System.out.println("      Conchas                     | Insira [16] para ver");
+		System.out.println("");
+		System.out.println("      Escumadeira                 | Insira [17] para ver");
+		System.out.println("");
+		System.out.println("      Garfão                      | Insira [18] para ver");
+		System.out.println("");
+		System.out.println("      Escorredor de macarrão      | Insira [19] para ver");
+		System.out.println("");
+		System.out.println("      Luva de silicone            | Insira [20] para ver");
+		System.out.println("");
+		System.out.println("      Coador de café              | Insira [21] para ver");
+		System.out.println("");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("      VOLTAR: [0]");
+		System.out.println("---------------------------------------------------------");
+		System.out.println("Insira o código do produto que deseja ver ou volte pro início: ");
+		Logi = text.nextInt();
+		if (Logi > 21) {
+			System.out.println("Não há mais produtos nesse campo!");
+		}
+		
+		switch (Logi) {
+		case 0: {
+			Itens();
+		}
+		case 1: {
+			quant = 1;
+			valor = 21.00; 
+			valortot = valor * quant;
+			String item[] = {"Espátula de silicone"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Espátula de Silicone ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 2: {
+			quant = 1;
+			valor = 14.00; 
+			valortot = valor * quant;
+			String item[] = {"Colher de Pau"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Colher de Pau ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}		
+		}
+		case 3: {
+			quant = 2;
+			valor = 17.00; 
+			valortot = valor * quant;
+			String item[] = {"Peneira Pequena", "Peneira Média"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Peneiras ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[1]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 4: {
+			quant = 1;
+			valor = 30.80; 
+			valortot = valor * quant;
+			String item[] = {"Tábua de corte de vidro"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Tábua de corte ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		} 
+		case 5: {
+			quant = 2;
+			valor = 20.80; 
+			valortot = valor * quant;
+			String item[] = {"Rolo de Plastico", "Rolo de Madeira"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Rolo para massas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[1]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 6: {
+			quant = 1;
+			valor = 7.00; 
+			valortot = valor * quant;
+			String item[] = {"Pinça de metal"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Pinça ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 7: {
+			quant = 1;
+			valor = 69.00; 
+			valortot = valor * quant;
+			String item[] = {"Medidor de temperatura", "Medidor de pressão", "Medidor de corte"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Conjunto de Medidores ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[1]);
+			System.out.println("Item: "+ item[2]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 8: {
+			quant = 1;
+			valor = 14.00; 
+			valortot = valor * quant;
+			String item[] = {"Xícara de medidas"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Xícara de medidas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 9: {
+			quant = 1;
+			valor = 10.20; 
+			valortot = valor * quant;
+			String item[] = {"Saca-rolhas"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Saca-rolhas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 10: {
+			quant = 1;
+			valor = 6.00; 
+			valortot = valor * quant;
+			String item[] = {"Abridor de latas"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Abridor de latas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 11: {
+			quant = 1;
+			valor = 6.00; 
+			valortot = valor * quant;
+			String item[] = {"Abridor de garrafas"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Abridor de garrafas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 12: {
+			quant = 1;
+			valor = 8.50; 
+			valortot = valor * quant;
+			String item[] = {"Tesoura"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Tesoura ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 13: {
+			quant = 1;
+			valor = 12.50; 
+			valortot = valor * quant;
+			String item[] = {"Ralador"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Ralador ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 14: {
+			quant = 1;
+			valor = 7.20; 
+			valortot = valor * quant;
+			String item[] = {"Espremedor de Alho"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Espremedor de Alho ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 15: {
+			quant = 1;
+			valor = 59.90; 
+			valortot = valor * quant;
+			String item[] = {"Faca grande", "Faca média", "Faca cerrilhada", "Faca ponta fina"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Conjunto de Facas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[1]);
+			System.out.println("Item: "+ item[2]);
+			System.out.println("Item: "+ item[3]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 16: {
+			quant = 2;
+			valor = 15.50; 
+			valortot = valor * quant;
+			String item[] = {"Concha Grande", "Concha Média"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Conchas ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Item: "+ item[1]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 17: {
+			quant = 1;
+			valor = 8.50; 
+			valortot = valor * quant;
+			String item[] = {"Escumadeira"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Escumadeira ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 18: {
+			quant = 1;
+			valor = 10.00; 
+			valortot = valor * quant;
+			String item[] = {"Garfão"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Garfão ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 19: {
+			quant = 1;
+			valor = 7.50; 
+			valortot = valor * quant;
+			String item[] = {"Escorredor de macarrão"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Escorredor de macarrão ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 20: {
+			quant = 1;
+			valor = 9.50; 
+			valortot = valor * quant;
+			String item[] = {"Luva de silicone"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Luva de silicone ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		case 21: {
+			quant = 1;
+			valor = 13.90; 
+			valortot = valor * quant;
+			String item[] = {"Coador de café"};
+			System.out.println("");
+			System.out.println("");
+			System.out.println("--- Coador de café ---");
+			System.out.println("----------------------------");
+			System.out.println("Quantidade: "+ quant);
+			System.out.println("Item: "+ item[0]);
+			System.out.println("Valor Unitário: "+ valor + " R$");
+			System.out.println("---------------------------");
+			System.out.println("O que deseja fazer?");
+			System.out.println("[1] para compra unitária");
+			System.out.println("[2] para compra coletiva");
+			System.out.println("[3] para compra voltar");
+			Logi = text.nextInt();
+			if (Logi == 1) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 2) {
+				System.out.println("No momento essa ação não está funcionado!");
+			}
+			if (Logi == 3) {
+				Utensilios();			}
+		}
+		}
+		}
+	
+	public void Panelas() {
+		System.out.println("No momento essa ação não está funcionado!");
+	}
+	public void Formas() {
+		System.out.println("No momento essa ação não está funcionado!");
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pagamento
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Confirmar
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package Pacote;
+import java.util.Scanner;
+
+public class confirmar {
+Scanner text = new Scanner (System.in);	
+produtos log = new produtos();
+pagamento pag = new pagamento();
+int logg;
+
+	public void Atribuir() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Revisando compra:");
+		System.out.println("----------------------------------------");
+		System.out.println("  Produto:           ");
+		System.out.println("");
+		System.out.println("  Comprador:         ");
+		System.out.println("");
+		System.out.println("  Unidades:          ");
+		System.out.println("");
+		System.out.println("  Valor:             ");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+		System.out.println("Confirmar [1]  Alterar [2]  Cancelar [0]");
+		logg = text.nextInt();
+		switch (logg) {
+		case 1: {
+			// para pagamento
+		}
+		case 2: {
+			alterar();
+		}
+		case 0: {
+			log.Utensilios();
+		}
+		if (logg > 2) {
+			System.out.println("Essa opção não existe!");
+			Atribuir();
+		}
+		}
+	}
+	
+	private void alterar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("O que deseja alterar?");
+		System.out.println("----------------------------------------");
+		System.out.println("   Produto    [1]");
+		System.out.println("");
+		System.out.println("   Comprador  [2]");
+		System.out.println("");
+		System.out.println("   Unidades   [3]");
+		System.out.println("");
+		System.out.println("   Nenhum     [0]");
+		System.out.println("----------------------------------------");
+		logg = text.nextInt();
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Envio
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nota
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
