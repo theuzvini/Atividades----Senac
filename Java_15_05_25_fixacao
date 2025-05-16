@@ -1,0 +1,911 @@
+Class main
+_____________________________________________________________________________________________________________________________________________________________________________________
+package Java;
+
+public class main {
+
+	public static void main(String[] args) {
+		atividade log = new atividade();
+		log.iniciar();
+	}
+
+}
+_____________________________________________________________________________________________________________________________________________________________________________________
+
+Class atividade
+_____________________________________________________________________________________________________________________________________________________________________________________
+package Java;
+import java.util.Scanner;
+
+public class atividade {
+	Scanner input = new Scanner (System.in);
+	int Data;
+	
+	public void iniciar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("       Execícios do dia 15/05/2025         ");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("Opções:");
+		System.out.println("  Atividade Fixação 1     |    Insira [1]  ");
+		System.out.println("");
+		System.out.println("  Atividade Fixação 2     |    Insira [2]  ");
+		System.out.println("");
+		System.out.println("  Informações             |    Insira [0]  ");
+		System.out.println("-------------------------------------------");
+		System.out.println("________");
+		Data = input.nextInt();
+		if (Data == 1) {
+			menu();
+		} else {
+			if (Data == 2) {
+				menu1();
+			} else {
+				if (Data == 0) {
+					informar();
+				} else {
+					System.out.println("Essa opção não existe!");
+				}
+			}
+		}
+	}
+	
+	public void menu() {
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("ATIVIDADE parte 1");
+		System.out.println("-------------------------------------------");
+		System.out.println("    Voltar ao Inicio    |    Insirir [0]   ");
+		System.out.println("");
+		System.out.println("    Questão 01          |    Insirir [1]   ");
+		System.out.println("");
+		System.out.println("    Questão 02          |    Insirir [2]   ");
+		System.out.println("");
+		System.out.println("    Questão 03          |    Insirir [3]   ");
+		System.out.println("");
+		System.out.println("    Questão 04          |    Insirir [4]   ");
+		System.out.println("");
+		System.out.println("    Questão 05          |    Insirir [5]   ");
+		System.out.println("");
+		System.out.println("    Questão 06          |    Insirir [6]   ");
+		System.out.println("-------------------------------------------");
+		Data = input.nextInt();
+		switch (Data) {
+		case 0: {
+			iniciar();
+		}
+		case 1: {
+			double mt;
+			double ct;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("1) Faça um programa que converta metros para\r\n"
+			+ "centímetros");
+			System.out.println("-------------------------------------------");
+			System.out.println("Quantos Metros?");
+			mt = input.nextInt();
+			ct = mt * 100;
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("Quantidade em Metros:      "+ mt +"m");
+			System.out.println("Quantidade em Centimetros: "+ ct +"cm");
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 2: {
+			double salb;
+			double gra;
+			double imp;
+			double saltot;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("2) Faça um algoritmo que receba o\r\n"
+			+ "salário-base de um funcionário, calcule e mostre o salário a receber,\r\n"
+			+ "sabendo-se que esse funcionário tem gratificação de 10% sobre o salário base e\r\n"
+			+ "paga imposto de 21% sobre o salário.");
+			System.out.println("-------------------------------------------");
+			System.out.println("Insira Salário-Base:");
+			salb = input.nextDouble();
+			gra = salb * 0.10;
+			imp = gra / 0.21;
+			saltot = imp;
+			String resultado = String.format("%.2f", saltot); // Linha com auxílio de IA para limitar a quantidade de casas. 
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Salário-Base:         "+salb+"R$");
+			System.out.println("       Gratificação:         25%");
+			System.out.println("       Salário líquido:      "+resultado+"R$");
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 3: {
+			int anonasc;
+			int idadever;
+			int ano = 2025;
+			int idade;
+			String nome;
+			String resultado;
+			String motivo;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("3) Crie um algoritmo que leia o ano de  nascimento e a idade atual de uma pessoa.\r\n"
+			+ "Imprimir a idade da pessoa. Se a idade for maior ou igual a 18 leia o nome da\r\n"
+			+ "pessoa e imprima o nome digitado e uma mensagem informando que sua entrada é\r\n"
+			+ "permitida. (Ex: Fulano, sua entrada foi permitida.)");
+			System.out.println("-------------------------------------------");
+			System.out.println("Insira Nome:");
+			nome = input.next();
+			System.out.println("Insira Idade:");
+			idade = input.nextInt();
+			System.out.println("Insira Ano de Nascimento:");
+			anonasc = input.nextInt();
+			idadever = ano - anonasc;
+			if (idade == idadever) {
+				if (idade < 18) {
+					resultado = "Entrada não permitida";
+					motivo = "Menor de idade";
+					System.out.println("");
+					System.out.println("Resultado:");
+					System.out.println("-------------------------------------------");
+					System.out.println("       Nome:              | "+nome);
+					System.out.println("       Idade:             | "+idade+" Anos");
+					System.out.println("       Ano de Nascimento: | "+anonasc);
+					System.out.println("       Status:            | "+resultado);
+					System.out.println("       Motivo:            | "+motivo);
+					System.out.println("-------------------------------------------");
+					menu();
+				} else {
+					if (idade >= 18) {
+						resultado = "Entrada permitida";
+						motivo = "";
+						System.out.println("");
+						System.out.println("Resultado:");
+						System.out.println("-------------------------------------------");
+						System.out.println("       Nome:              | "+nome);
+						System.out.println("       Idade:             | "+idade+" Anos");
+						System.out.println("       Ano de Nascimento: | "+anonasc);
+						System.out.println("       Status:            | "+resultado);
+						System.out.println("       Motivo:            | "+motivo);
+						System.out.println("-------------------------------------------");
+						menu();
+					}
+				}
+			} else {
+				resultado = "Entrada não permitida";
+				motivo = "falsificação ideológica";
+				System.out.println("");
+				System.out.println("Resultado:");
+				System.out.println("-------------------------------------------");
+				System.out.println("       Nome:              | "+nome);
+				System.out.println("       Idade:             | "+idade+" Anos");
+				System.out.println("       Ano de Nascimento: | "+anonasc);
+				System.out.println("       Status:            | "+resultado);
+				System.out.println("       Motivo:            | "+motivo);
+				System.out.println("-------------------------------------------");
+				menu();
+			}
+		}
+		case 4: {
+			double sal;
+			double prest;
+			double limite;
+			String resultado;
+			String motivo;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("4) Faça um algoritmo de empréstimo bancário\r\n"
+			+ "que vai solicitar salário e o valor da prestação. Se prestação for maior que 15% do salário,\r\n"
+			+ "imprimir : Empréstimo não pode ser concedido. Senão imprimir\r\n"
+			+ "Empréstimo pode ser concedido");
+			System.out.println("-------------------------------------------");
+			System.out.println("Insira salário:");
+			sal = input.nextDouble();
+			limite = sal * 0.15;
+			System.out.println("Insira prestação:");
+			prest = input.nextDouble();
+			if (prest > limite) {
+				resultado = "Empréstimo não pode ser concedido";
+				motivo = "Valor acima de 15%";
+			} else {
+				resultado = "Empréstimo pode ser concedido";
+				motivo = "";
+			}
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Salário:           | "+sal);
+			System.out.println("       prestação:         | "+prest);
+			System.out.println("       Status:            | "+resultado);
+			System.out.println("       Motivo:            | "+motivo);
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 5: {
+			String resultado;
+			String motivo;
+			double salh;
+			double salbase;
+			double saltot;
+			int hora;
+			int hextra;
+			int semana = 40;
+			int mes = semana * 4;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("5) A jornada de trabalho semanal de um\r\n"
+			+ "funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas\r\n"
+			+ "receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de\r\n"
+			+ "50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o\r\n"
+			+ "salário por hora e escreva o salário total do funcionário, que deverá ser\r\n"
+			+ "acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês\r\n"
+			+ "possua 4 semanas exatas)");
+			System.out.println("-------------------------------------------");
+			System.out.println("Horas trabalhadas no mês:");
+			hora = input.nextInt();
+			System.out.println("Salário por Hora");
+			salh = input.nextDouble();
+			salbase = mes * salh;
+			if (hora > mes) {
+				hextra = hora - mes;
+				saltot = salbase + (hextra * (salh * 1.5));
+				resultado = "Acrescimo no salário";
+				motivo = "Horas extras";
+			} else {
+				saltot = hora * salh;
+				resultado = "Sem acrescimo no salário";
+				motivo = "";
+			}
+			String salariob = String.format("%.2f", salbase);
+			String salario = String.format("%.2f", saltot);
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Salário-base:      | "+salariob);
+			System.out.println("       Salário:           | "+salario);
+			System.out.println("       Status:            | "+resultado);
+			System.out.println("       Motivo:            | "+motivo);
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 6: {
+			double sal;
+			double saltot;
+			double val;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("6) Ler o salário fixo e o valor das vendas\r\n"
+			+ "efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe uma comissão\r\n"
+			+ "de 7% sobre o total das vendas até R$ 1.500,00 mais 3% sobre o que ultrapassar\r\n"
+			+ "este valor, calcular e escrever o seu salário total.");
+			System.out.println("-------------------------------------------");
+			System.out.println("inserir salário fixo:");
+			sal = input.nextDouble();
+			System.out.println("inserir valor de vendas:");
+			val = input.nextDouble();
+				double limite = 1500.00 * 0.3;
+				double comissao = val * 0.7;
+			if(comissao > 1500) {
+				saltot = limite;
+				String salario = String.format("%.2f", sal);
+				String salariot = String.format("%.2f", saltot);
+				System.out.println("");
+				System.out.println("Resultado:");
+				System.out.println("-------------------------------------------");
+				System.out.println("       Salário-fixo:      | "+salario);
+				System.out.println("       Salário:           | "+salariot);
+				System.out.println("-------------------------------------------");
+				menu();
+			}
+			String salario = String.format("%.2f", sal);
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Salário-fixo:      | "+salario);
+			System.out.println("-------------------------------------------");
+			menu();
+		}	
+	}	
+	}
+	
+	public void menu1() {
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("ATIVIDADE parte 2");
+		System.out.println("-------------------------------------------");
+		System.out.println("    Voltar ao Inicio    |    Insirir [0]   ");
+		System.out.println("");
+		System.out.println("    Questão 01          |    Insirir [1]   ");
+		System.out.println("");
+		System.out.println("    Questão 02          |    Insirir [2]   ");
+		System.out.println("");
+		System.out.println("    Questão 03          |    Insirir [3]   ");
+		System.out.println("-------------------------------------------");
+		Data = input.nextInt();
+		switch (Data) {
+		case 0: {
+			iniciar();
+		}
+		case 1: {
+			double dol;
+			double rea;
+			int cot;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("1) Elaborar um programa que efetue a apresentação do valor da conversão em real\r\n"
+			+"(R$) de um valor lido em dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar\r\n"
+			+"e também a quantidade de dólar e s disponíveis com o usuário.");
+			System.out.println("-------------------------------------------");
+			System.out.println("CONVERSOR REAL -> DOLAR");
+			System.out.println("-------------------------------------------");
+			System.out.println("Inserir valor em dolar");
+			dol = input.nextDouble();
+			System.out.println("Inserir cotação do dolar");
+			cot = input.nextInt();
+			rea = dol * cot;
+			String dolar = String.format("%.2f", dol);
+			String real = String.format("%.2f", rea);
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Quantidade em Dolar:      | "+dolar+"U$");
+			System.out.println("       Quantidade em Reais:      | "+real+"R$");
+			System.out.println("       Cotação do Dolar:         | "+cot+"%");
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 2: {
+			int mes;
+			double val;
+			double juros  = 0.007;
+			double rend;
+			double valtot;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("2) Faça um programa que receba um valor que foi depositado e exiba o valor com\r\n"
+			+"rendimento após um mês. Considere fixo o juro da poupança em 0.70% a. m.");
+			System.out.println("-------------------------------------------");
+			System.out.println("Deseja ver valor em quantos meses?");
+			mes = input.nextInt();
+			System.out.println("Deposite valor:");
+			val = input.nextDouble();
+			rend = (val * juros) * mes;
+			valtot = val * rend;
+			String deposito = String.format("%.2f", val);
+			String rendimento = String.format("%.2f", valtot);
+			System.out.println("");
+			System.out.println("Resultado:");
+			System.out.println("-------------------------------------------");
+			System.out.println("       Valor depositado:      | "+deposito+"R$");
+			System.out.println("       Quatidade de mêses:    | "+mes);
+			System.out.println("       Rendimento:            | "+rendimento+"R$");
+			System.out.println("-------------------------------------------");
+			menu();
+		}
+		case 3: {
+			System.out.println("");
+			System.out.println("");
+			System.out.println("-------------------------------------------");
+			System.out.println("3) Faça um programa que solicite o nome e preço de custo de um produto qualquer, após,\r\n"
+			+" processe um aumento de 55% e informe qual será o preço de venda dos seguintes produtos:\r\n"
+					+ "AÇUCAR\r\n"
+					+ "BANHA\r\n"
+					+ "BATATA INGLESA\r\n"
+					+ "BATATA DOCE\r\n"
+					+ "BISCOITO DE POLVILHO\r\n"
+					+ "BOLACHA DOCE ( Tipo maisena)\r\n"
+					+ "BOLACHA SALGADA (Tipo cracker)\r\n"
+					+ "CAFÉ");
+			System.out.println("-------------------------------------------");
+			System.out.println("            LOJINHA DO SEU ZÉ              ");
+			System.out.println("-------------------------------------------");
+		}
+		}
+	}
+	
+	public void informar() {
+		System.out.println("-----------------------------------------------");
+		System.out.println("                   INFO-CODE                   ");
+		System.out.println("-----------------------------------------------");
+		System.out.println("[0] Voltar");
+		System.out.println("[1] Ver códigos");
+		//System.out.println("[2] Ver readme ");
+		System.out.println("-----------------------------------------------");
+		Data = input.nextInt();
+		switch (Data) {
+		case 0: {
+			iniciar();
+		}
+		case 1: {
+			inicio();
+		}
+		//case 2: {
+			
+		//}
+		}
+	}
+	
+	public void inicio() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("              Ver Código de:               ");
+		System.out.println("-------------------------------------------");
+		System.out.println("-------------------------------------------");
+		System.out.println("Opções:");
+		System.out.println("  Atividade Fixação 1     |    Insira [1]  ");
+		System.out.println("");
+		System.out.println("  Atividade Fixação 2     |    Insira [2]  ");
+		System.out.println("");
+		System.out.println("  Cancelar                |    Insira [0]  ");
+		System.out.println("-------------------------------------------");
+		System.out.println("________");
+		Data = input.nextInt();
+		if (Data == 1) {
+			menuu();
+		} else {
+			if (Data == 2) {
+				menuu1();
+			} else {
+				if (Data == 0) {
+					informar();
+				} else {
+					System.out.println("Essa opção não existe!");
+				}
+			}
+		}
+	}
+	
+	public void menuu() {
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("ATIVIDADE parte 1");
+		System.out.println("-------------------------------------------");
+		System.out.println("    Voltar ao Inicio    |    Insirir [0]   ");
+		System.out.println("");
+		System.out.println("    Questão 01          |    Insirir [1]   ");
+		System.out.println("");
+		System.out.println("    Questão 02          |    Insirir [2]   ");
+		System.out.println("");
+		System.out.println("    Questão 03          |    Insirir [3]   ");
+		System.out.println("");
+		System.out.println("    Questão 04          |    Insirir [4]   ");
+		System.out.println("");
+		System.out.println("    Questão 05          |    Insirir [5]   ");
+		System.out.println("");
+		System.out.println("    Questão 06          |    Insirir [6]   ");
+		System.out.println("-------------------------------------------");
+		Data = input.nextInt();
+		switch (Data) {
+		case 0: {
+			inicio();
+		}
+		case 1: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("double mt;\r\n"
+					+ "			double ct;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"1) Faça um programa que converta metros para\\r\\n\"\r\n"
+					+ "			+ \"centímetros\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Quantos Metros?\");\r\n"
+					+ "			mt = input.nextInt();\r\n"
+					+ "			ct = mt * 100;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Quantidade em Metros:      \"+ mt +\"m\");\r\n"
+					+ "			System.out.println(\"Quantidade em Centimetros: \"+ ct +\"cm\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menuu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		case 2: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("double salb;\r\n"
+					+ "			double gra;\r\n"
+					+ "			double imp;\r\n"
+					+ "			double saltot;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"2) Faça um algoritmo que receba o\\r\\n\"\r\n"
+					+ "			+ \"salário-base de um funcionário, calcule e mostre o salário a receber,\\r\\n\"\r\n"
+					+ "			+ \"sabendo-se que esse funcionário tem gratificação de 10% sobre o salário base e\\r\\n\"\r\n"
+					+ "			+ \"paga imposto de 21% sobre o salário.\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Insira Salário-Base:\");\r\n"
+					+ "			salb = input.nextDouble();\r\n"
+					+ "			gra = salb * 0.10;\r\n"
+					+ "			imp = gra / 0.21;\r\n"
+					+ "			saltot = imp;\r\n"
+					+ "			String resultado = String.format(\"%.2f\", saltot); // Linha com auxílio de IA para limitar a quantidade de casas. \r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Salário-Base:         \"+salb+\"R$\");\r\n"
+					+ "			System.out.println(\"       Gratificação:         25%\");\r\n"
+					+ "			System.out.println(\"       Salário líquido:      \"+resultado+\"R$\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menuu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		case 3: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("int anonasc;\r\n"
+					+ "			int idadever;\r\n"
+					+ "			int ano = 2025;\r\n"
+					+ "			int idade;\r\n"
+					+ "			String nome;\r\n"
+					+ "			String resultado;\r\n"
+					+ "			String motivo;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"3) Crie um algoritmo que leia o ano de  nascimento e a idade atual de uma pessoa.\\r\\n\"\r\n"
+					+ "			+ \"Imprimir a idade da pessoa. Se a idade for maior ou igual a 18 leia o nome da\\r\\n\"\r\n"
+					+ "			+ \"pessoa e imprima o nome digitado e uma mensagem informando que sua entrada é\\r\\n\"\r\n"
+					+ "			+ \"permitida. (Ex: Fulano, sua entrada foi permitida.)\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Insira Nome:\");\r\n"
+					+ "			nome = input.next();\r\n"
+					+ "			System.out.println(\"Insira Idade:\");\r\n"
+					+ "			idade = input.nextInt();\r\n"
+					+ "			System.out.println(\"Insira Ano de Nascimento:\");\r\n"
+					+ "			anonasc = input.nextInt();\r\n"
+					+ "			idadever = ano - anonasc;\r\n"
+					+ "			if (idade == idadever) {\r\n"
+					+ "				if (idade < 18) {\r\n"
+					+ "					resultado = \"Entrada não permitida\";\r\n"
+					+ "					motivo = \"Menor de idade\";\r\n"
+					+ "					System.out.println(\"\");\r\n"
+					+ "					System.out.println(\"Resultado:\");\r\n"
+					+ "					System.out.println(\"-------------------------------------------\");\r\n"
+					+ "					System.out.println(\"       Nome:              | \"+nome);\r\n"
+					+ "					System.out.println(\"       Idade:             | \"+idade+\" Anos\");\r\n"
+					+ "					System.out.println(\"       Ano de Nascimento: | \"+anonasc);\r\n"
+					+ "					System.out.println(\"       Status:            | \"+resultado);\r\n"
+					+ "					System.out.println(\"       Motivo:            | \"+motivo);\r\n"
+					+ "					System.out.println(\"-------------------------------------------\");\r\n"
+					+ "					menu();\r\n"
+					+ "				} else {\r\n"
+					+ "					if (idade >= 18) {\r\n"
+					+ "						resultado = \"Entrada permitida\";\r\n"
+					+ "						motivo = \"\";\r\n"
+					+ "						System.out.println(\"\");\r\n"
+					+ "						System.out.println(\"Resultado:\");\r\n"
+					+ "						System.out.println(\"-------------------------------------------\");\r\n"
+					+ "						System.out.println(\"       Nome:              | \"+nome);\r\n"
+					+ "						System.out.println(\"       Idade:             | \"+idade+\" Anos\");\r\n"
+					+ "						System.out.println(\"       Ano de Nascimento: | \"+anonasc);\r\n"
+					+ "						System.out.println(\"       Status:            | \"+resultado);\r\n"
+					+ "						System.out.println(\"       Motivo:            | \"+motivo);\r\n"
+					+ "						System.out.println(\"-------------------------------------------\");\r\n"
+					+ "						menu();\r\n"
+					+ "					}\r\n"
+					+ "				}\r\n"
+					+ "			} else {\r\n"
+					+ "				resultado = \"Entrada não permitida\";\r\n"
+					+ "				motivo = \"falsificação ideológica\";\r\n"
+					+ "				System.out.println(\"\");\r\n"
+					+ "				System.out.println(\"Resultado:\");\r\n"
+					+ "				System.out.println(\"-------------------------------------------\");\r\n"
+					+ "				System.out.println(\"       Nome:              | \"+nome);\r\n"
+					+ "				System.out.println(\"       Idade:             | \"+idade+\" Anos\");\r\n"
+					+ "				System.out.println(\"       Ano de Nascimento: | \"+anonasc);\r\n"
+					+ "				System.out.println(\"       Status:            | \"+resultado);\r\n"
+					+ "				System.out.println(\"       Motivo:            | \"+motivo);\r\n"
+					+ "				System.out.println(\"-------------------------------------------\");\r\n"
+					+ "				menu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		case 4: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("double sal;\r\n"
+					+ "			double prest;\r\n"
+					+ "			double limite;\r\n"
+					+ "			String resultado;\r\n"
+					+ "			String motivo;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"4) Faça um algoritmo de empréstimo bancário\\r\\n\"\r\n"
+					+ "			+ \"que vai solicitar salário e o valor da prestação. Se prestação for maior que 15% do salário,\\r\\n\"\r\n"
+					+ "			+ \"imprimir : Empréstimo não pode ser concedido. Senão imprimir\\r\\n\"\r\n"
+					+ "			+ \"Empréstimo pode ser concedido\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Insira salário:\");\r\n"
+					+ "			sal = input.nextDouble();\r\n"
+					+ "			limite = sal * 0.15;\r\n"
+					+ "			System.out.println(\"Insira prestação:\");\r\n"
+					+ "			prest = input.nextDouble();\r\n"
+					+ "			if (prest > limite) {\r\n"
+					+ "				resultado = \"Empréstimo não pode ser concedido\";\r\n"
+					+ "				motivo = \"Valor acima de 15%\";\r\n"
+					+ "			} else {\r\n"
+					+ "				resultado = \"Empréstimo pode ser concedido\";\r\n"
+					+ "				motivo = \"\";\r\n"
+					+ "			}\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Salário:           | \"+sal);\r\n"
+					+ "			System.out.println(\"       prestação:         | \"+prest);\r\n"
+					+ "			System.out.println(\"       Status:            | \"+resultado);\r\n"
+					+ "			System.out.println(\"       Motivo:            | \"+motivo);\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menuu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		case 5: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("String resultado;\r\n"
+					+ "			String motivo;\r\n"
+					+ "			double salh;\r\n"
+					+ "			double salbase;\r\n"
+					+ "			double saltot;\r\n"
+					+ "			int hora;\r\n"
+					+ "			int hextra;\r\n"
+					+ "			int semana = 40;\r\n"
+					+ "			int mes = semana * 4;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"5) A jornada de trabalho semanal de um\\r\\n\"\r\n"
+					+ "			+ \"funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas\\r\\n\"\r\n"
+					+ "			+ \"receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de\\r\\n\"\r\n"
+					+ "			+ \"50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, o\\r\\n\"\r\n"
+					+ "			+ \"salário por hora e escreva o salário total do funcionário, que deverá ser\\r\\n\"\r\n"
+					+ "			+ \"acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês\\r\\n\"\r\n"
+					+ "			+ \"possua 4 semanas exatas)\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Horas trabalhadas no mês:\");\r\n"
+					+ "			hora = input.nextInt();\r\n"
+					+ "			System.out.println(\"Salário por Hora\");\r\n"
+					+ "			salh = input.nextDouble();\r\n"
+					+ "			salbase = mes * salh;\r\n"
+					+ "			if (hora > mes) {\r\n"
+					+ "				hextra = hora - mes;\r\n"
+					+ "				saltot = salbase + (hextra * (salh * 1.5));\r\n"
+					+ "				resultado = \"Acrescimo no salário\";\r\n"
+					+ "				motivo = \"Horas extras\";\r\n"
+					+ "			} else {\r\n"
+					+ "				saltot = hora * salh;\r\n"
+					+ "				resultado = \"Sem acrescimo no salário\";\r\n"
+					+ "				motivo = \"\";\r\n"
+					+ "			}\r\n"
+					+ "			String salariob = String.format(\"%.2f\", salbase);\r\n"
+					+ "			String salario = String.format(\"%.2f\", saltot);\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Salário-base:      | \"+salariob);\r\n"
+					+ "			System.out.println(\"       Salário:           | \"+salario);\r\n"
+					+ "			System.out.println(\"       Status:            | \"+resultado);\r\n"
+					+ "			System.out.println(\"       Motivo:            | \"+motivo);\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menuu();\r\n"
+					+ "");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		case 6: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("double sal;\r\n"
+					+ "			double saltot;\r\n"
+					+ "			double val;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"6) Ler o salário fixo e o valor das vendas\\r\\n\"\r\n"
+					+ "			+ \"efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe uma comissão\\r\\n\"\r\n"
+					+ "			+ \"de 7% sobre o total das vendas até R$ 1.500,00 mais 3% sobre o que ultrapassar\\r\\n\"\r\n"
+					+ "			+ \"este valor, calcular e escrever o seu salário total.\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"inserir salário fixo:\");\r\n"
+					+ "			sal = input.nextDouble();\r\n"
+					+ "			System.out.println(\"inserir valor de vendas:\");\r\n"
+					+ "			val = input.nextDouble();\r\n"
+					+ "				double limite = 1500.00 * 0.3;\r\n"
+					+ "				double comissao = val * 0.7;\r\n"
+					+ "			if(comissao > 1500) {\r\n"
+					+ "				saltot = limite;\r\n"
+					+ "				String salario = String.format(\"%.2f\", sal);\r\n"
+					+ "				String salariot = String.format(\"%.2f\", saltot);\r\n"
+					+ "				System.out.println(\"\");\r\n"
+					+ "				System.out.println(\"Resultado:\");\r\n"
+					+ "				System.out.println(\"-------------------------------------------\");\r\n"
+					+ "				System.out.println(\"       Salário-fixo:      | \"+salario);\r\n"
+					+ "				System.out.println(\"       Salário:           | \"+salariot);\r\n"
+					+ "				System.out.println(\"-------------------------------------------\");\r\n"
+					+ "				menu();\r\n"
+					+ "			}\r\n"
+					+ "			String salario = String.format(\"%.2f\", sal);\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Salário-fixo:      | \"+salario);\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menuu();\r\n"
+					+ "");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu();
+			}
+		}
+		}
+	}
+	
+	public void menuu1() {
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("ATIVIDADE parte 2");
+		System.out.println("-------------------------------------------");
+		System.out.println("    Voltar ao Inicio    |    Insirir [0]   ");
+		System.out.println("");
+		System.out.println("    Questão 01          |    Insirir [1]   ");
+		System.out.println("");
+		System.out.println("    Questão 02          |    Insirir [2]   ");
+		System.out.println("");
+		System.out.println("    Questão 03          |    Insirir [3]   ");
+		System.out.println("-------------------------------------------");
+		Data = input.nextInt();
+		switch (Data) {
+		case 0: {
+			inicio();
+		}
+		case 1: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("double dol;\r\n"
+					+ "			double rea;\r\n"
+					+ "			int cot;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"1) Elaborar um programa que efetue a apresentação do valor da conversão em real\\r\\n\"\r\n"
+					+ "			+\"(R$) de um valor lido em dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar\\r\\n\"\r\n"
+					+ "			+\"e também a quantidade de dólar e s disponíveis com o usuário.\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"CONVERSOR REAL -> DOLAR\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Inserir valor em dolar\");\r\n"
+					+ "			dol = input.nextDouble();\r\n"
+					+ "			System.out.println(\"Inserir cotação do dolar\");\r\n"
+					+ "			cot = input.nextInt();\r\n"
+					+ "			rea = dol * cot;\r\n"
+					+ "			String dolar = String.format(\"%.2f\", dol);\r\n"
+					+ "			String real = String.format(\"%.2f\", rea);\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Quantidade em Dolar:      | \"+dolar+\"U$\");\r\n"
+					+ "			System.out.println(\"       Quantidade em Reais:      | \"+real+\"R$\");\r\n"
+					+ "			System.out.println(\"       Cotação do Dolar:         | \"+cot+\"%\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu1();
+			}
+		}
+		case 2: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("int mes;\r\n"
+					+ "			double val;\r\n"
+					+ "			double juros  = 0.007;\r\n"
+					+ "			double rend;\r\n"
+					+ "			double valtot;\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"2) Faça um programa que receba um valor que foi depositado e exiba o valor com\\r\\n\"\r\n"
+					+ "			+\"rendimento após um mês. Considere fixo o juro da poupança em 0.70% a. m.\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"Deseja ver valor em quantos meses?\");\r\n"
+					+ "			mes = input.nextInt();\r\n"
+					+ "			System.out.println(\"Deposite valor:\");\r\n"
+					+ "			val = input.nextDouble();\r\n"
+					+ "			rend = (val * juros) * mes;\r\n"
+					+ "			valtot = val * rend;\r\n"
+					+ "			String deposito = String.format(\"%.2f\", val);\r\n"
+					+ "			String rendimento = String.format(\"%.2f\", valtot);\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"Resultado:\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"       Valor depositado:      | \"+deposito+\"R$\");\r\n"
+					+ "			System.out.println(\"       Quatidade de mêses:    | \"+mes);\r\n"
+					+ "			System.out.println(\"       Rendimento:            | \"+rendimento+\"R$\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			menu();");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu1();
+			}
+		}
+		case 3: {
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"3) Faça um programa que solicite o nome e preço de custo de um produto qualquer, após,\\r\\n\"\r\n"
+					+ "			+\" processe um aumento de 55% e informe qual será o preço de venda dos seguintes produtos:\\r\\n\"\r\n"
+					+ "					+ \"AÇUCAR\\r\\n\"\r\n"
+					+ "					+ \"BANHA\\r\\n\"\r\n"
+					+ "					+ \"BATATA INGLESA\\r\\n\"\r\n"
+					+ "					+ \"BATATA DOCE\\r\\n\"\r\n"
+					+ "					+ \"BISCOITO DE POLVILHO\\r\\n\"\r\n"
+					+ "					+ \"BOLACHA DOCE ( Tipo maisena)\\r\\n\"\r\n"
+					+ "					+ \"BOLACHA SALGADA (Tipo cracker)\\r\\n\"\r\n"
+					+ "					+ \"CAFÉ\");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");\r\n"
+					+ "			System.out.println(\"            LOJINHA DO SEU ZÉ              \");\r\n"
+					+ "			System.out.println(\"-------------------------------------------\");");
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println(" Voltar [0]");
+			System.out.println("-------------------");
+			Data = input.nextInt();
+			if (Data == 0) {
+				menuu1();
+			}
+		}
+		}
+	}
+}
+
