@@ -1,0 +1,426 @@
+Main
+__________________________________________________________________________________________________________________________________________
+
+package java_20_05_25;
+
+    public class Main {
+       public static void main(String[] args){
+           Task log = new Task();
+           log.Iniciar();
+       }
+    }
+__________________________________________________________________________________________________________________________________________
+
+Task
+__________________________________________________________________________________________________________________________________________
+
+package java_20_05_25;
+import java.util.Scanner;
+
+    public class Task {
+        Scanner input = new Scanner(System.in);
+        String text, text1, text2, text3;
+        double sal, salb, saltot, fab, porct, imp,c;
+        int num, num1, num2, num3, CODIGO;
+        int Logi;
+        
+        public void Iniciar(){
+            System.out.println("");
+            System.out.println("");
+            System.out.println("--------------------------------------------");
+            System.out.println("");
+            System.out.println("      Bem-Vindo ao programa MathTec");
+            System.out.println("");
+            System.out.println("--------------------------------------------");
+            System.out.println("Comandos para inserir:");
+            System.out.println("[1] Ver Atividades");
+            System.out.println("[2] Ver Codigos");
+            System.out.println("[3] Ver Readme");
+            System.out.println("[4] Encerrar Programa");
+            System.out.print(": ");
+            Logi = input.nextInt();
+            switch (Logi) {
+                case 1:
+                    Atividade();
+                    break;
+                case 2:
+                    Codigo();
+                    break;
+                case 3:
+                    Read();
+                    break;
+                case 4:
+                    break;
+                default:
+                    
+            }
+        }
+        
+        public void Atividade(){
+            System.out.println("");
+            System.out.println("");
+            System.out.println("-------------------------------------------");
+            System.out.println("     ATIVIDADE DE FIXACAO 20/05/2025");
+            System.out.println("-------------------------------------------");
+            System.out.println("Comandos para inserir:");
+            System.out.println("[0] Para Voltar");
+            System.out.println("[1] Atividade 1  |  Relacionamentos de Valores");
+            System.out.println("[2] Atividade 2  |  Numeros por Extenso");
+            System.out.println("[3] Atividade 3  |  Custo do Carro");
+            System.out.println("[4] Atividade 4  |  Conta Corrente");
+            System.out.print(": ");
+            Logi = input.nextInt();
+            switch (Logi) {
+                case 0:
+                    Iniciar();
+                    break;
+                case 1:
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("------------------------------------");
+                    System.out.println("      Bem-Vindo a ATIVIDADE 01");
+                    System.out.println("------------------------------------");
+                    System.out.println("");
+                    System.out.println("1) Escrever um programa que leia dois números inteiros\\n" + 
+                    " e mostre todos os relacionamentos de ordem existentes entre eles. \\n"+
+                    "Os relacionamentos possíveis são: Igual, Não igual, Maior, Menor, Maior ou igual, Menor ou igual.");
+                    System.out.println("");
+                    System.out.println("INSERIR VALOR 1");
+                    num = input.nextInt();
+                    System.out.println("INSERIR VALOR 2");
+                    num1 = input.nextInt();
+                    if (num == num1) {
+                        System.out.println("Os valores sao iguais!");
+                    } else {
+                        if (num != num1) {
+                            System.out.println("Os valores nao sao iguais!");
+                            if (num > num1) {
+                                System.out.println(num+" E maior que "+num1);
+                                System.out.println(num1+" E menor que "+num);
+                            }
+                            if (num < num1) {
+                                System.out.println(num1+" E maior que "+num); 
+                                System.out.println(num+" E menor que "+num1);
+                            }
+                            if (num >= num1) {
+                                System.out.println(num+" E maior ou igual a "+num1);
+                            }
+                            if (num <= num1) {
+                                System.out.println(num+" E menor ou igual a "+num1);
+                            }
+                        } 
+                    }
+                    Atividade();
+                    break;
+                case 2:
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("------------------------------------");
+                    System.out.println("      Bem-Vindo a ATIVIDADE 02");
+                    System.out.println("------------------------------------");
+                    System.out.println("");
+                    System.out.println("2) Escreva um programa que leia um número inteiro (variável CODIGO). \\n"
+                    +" Verificar se o código é igual a 1, igual a 2 ou igual a 3. Caso não seja,\\n "
+                    +" apresentar a mensagem “Código inválido”. Ao ser verificado o código \\n "
+                    +" e constatado que é um valor válido, o programa deve verificar cada código em \\n "
+                    +"separado para determinar seu valor por extenso, ou seja, apresentar a mensagem “um”, ”dois” ou “três”.");
+                    System.out.println("");
+                    System.out.println("INSERIR NUMERO INTEIRO:");
+                    num = input.nextInt();
+                    CODIGO = num;
+                    if (CODIGO == 1 || CODIGO == 2 || CODIGO == 3) {
+                        if (CODIGO == 1) {
+                            System.out.println("UM");
+                        }
+                        if (CODIGO == 2) {
+                            System.out.println("DOIS");
+                        }
+                        if (CODIGO == 3) {
+                            System.out.println("TRES");
+                        }
+                    } else {
+                        System.out.println("Codigo invalido!");
+                    }
+                    Atividade();
+                    break;
+                case 3:
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("------------------------------------");
+                    System.out.println("      Bem-Vindo a ATIVIDADE 03");
+                    System.out.println("------------------------------------");
+                    System.out.println("");
+                    System.out.println("3) O custo de um carro novo ao consumidor é a soma do custo de fábrica com a "
+                    + "porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo que o percentual do "
+                    + "distribuidor seja de 28% e os impostos de 45%, escrever um algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo final ao consumidor");
+                    System.out.println("");
+                    porct= 0.28;
+                    imp = 0.45;
+                    System.out.println("INSIRA CUSTO DA FABRICA");
+                    fab = input.nextDouble();
+                    fab = fab * porct;
+                    imp = fab / imp;
+                    c = fab + imp;
+                    System.out.println("O custo e de " + c + "R$");
+                    Atividade();
+                    break;
+                case 4:
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("------------------------------------");
+                    System.out.println("      Bem-Vindo a ATIVIDADE 04");
+                    System.out.println("------------------------------------");
+                    System.out.println("");
+                    System.out.println("4) Crie uma classe para representar uma conta-corrente,"
+                    + "com métodos para depositar uma quantia, sacar uma quantia e obter o saldo. "
+                    + "Para cada saque será debitada também uma taxa de operação equivalente "
+                    + "à 0,5% do valor sacado. Crie, em seguida, uma subclasse desta classe "
+                    + "anterior para representar uma conta-corrente de um cliente especial. "
+                    + "Clientes especiais pagam taxas de operação de apenas 0,1% do valor sacado. "
+                    + "Faça testes com as duas classes e verifique seus resultados.");
+                    System.out.println("");
+                     Conta_corrente logg = new Conta_corrente();
+                     logg.Conta();
+                    break;
+                default:
+                    
+            }
+        }
+        
+        public void Codigo(){
+            System.out.println("");
+            System.out.println("");
+            System.out.println("-------------------------------------------");
+            System.out.println("        VER CODIGOS DA ATIVIDADE");
+            System.out.println("-------------------------------------------");
+            System.out.println("Comandos para inserir:");
+            System.out.println("[0] Para Voltar");
+            System.out.println("[1] Atividade 1  |  Relacionamentos de Valores");
+            System.out.println("[2] Atividade 2  |  Números por Extenso");
+            System.out.println("[3] Atividade 3  |  Custo do Carro");
+            System.out.println("[3] Atividade 3  |  Custo do Carro");
+            System.out.println("[3] Atividade 3  |  Custo do Carro");
+            System.out.print(": ");
+            Logi = input.nextInt();
+            switch (Logi) {
+                case 0:
+                    Iniciar();
+                    break;
+                case 1:
+                    System.out.println("System.out.println(\"\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"      Bem-Vindo a ATIVIDADE 01\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"1) Escrever um programa que leia dois números inteiros\\\\n\" + \n" +
+"                    \" e mostre todos os relacionamentos de ordem existentes entre eles. \\\\n\"+\n" +
+"                    \"Os relacionamentos possíveis são: Igual, Não igual, Maior, Menor, Maior ou igual, Menor ou igual.\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"INSERIR VALOR 1\");\n" +
+"                    num = input.nextInt();\n" +
+"                    System.out.println(\"INSERIR VALOR 2\");\n" +
+"                    num1 = input.nextInt();\n" +
+"                    if (num == num1) {\n" +
+"                        System.out.println(\"Os valores sao iguais!\");\n" +
+"                    } else {\n" +
+"                        if (num != num1) {\n" +
+"                            System.out.println(\"Os valores nao sao iguais!\");\n" +
+"                            if (num > num1) {\n" +
+"                                System.out.println(num+\" E maior que \"+num1);\n" +
+"                                System.out.println(num1+\" E menor que \"+num);\n" +
+"                            }\n" +
+"                            if (num < num1) {\n" +
+"                                System.out.println(num1+\" E maior que \"+num); \n" +
+"                                System.out.println(num+\" E menor que \"+num1);\n" +
+"                            }\n" +
+"                            if (num >= num1) {\n" +
+"                                System.out.println(num+\" E maior ou igual a \"+num1);\n" +
+"                            }\n" +
+"                            if (num <= num1) {\n" +
+"                                System.out.println(num+\" E menor ou igual a \"+num1);\n" +
+"                            }\n" +
+"                        }");
+                    Iniciar();
+                    break;
+                case 2:
+                    System.out.println("System.out.println(\"\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"      Bem-Vindo a ATIVIDADE 02\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"2) Escreva um programa que leia um número inteiro (variável CODIGO). \\\\n\"\n" +
+"                    +\" Verificar se o código é igual a 1, igual a 2 ou igual a 3. Caso não seja,\\\\n \"\n" +
+"                    +\" apresentar a mensagem “Código inválido”. Ao ser verificado o código \\\\n \"\n" +
+"                    +\" e constatado que é um valor válido, o programa deve verificar cada código em \\\\n \"\n" +
+"                    +\"separado para determinar seu valor por extenso, ou seja, apresentar a mensagem “um”, ”dois” ou “três”.\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"INSERIR NUMERO INTEIRO:\");\n" +
+"                    num = input.nextInt();\n" +
+"                    CODIGO = num;\n" +
+"                    if (CODIGO == 1 || CODIGO == 2 || CODIGO == 3) {\n" +
+"                        if (CODIGO == 1) {\n" +
+"                            System.out.println(\"UM\");\n" +
+"                        }\n" +
+"                        if (CODIGO == 2) {\n" +
+"                            System.out.println(\"DOIS\");\n" +
+"                        }\n" +
+"                        if (CODIGO == 3) {\n" +
+"                            System.out.println(\"TRES\");\n" +
+"                        }\n" +
+"                    } else {\n" +
+"                        System.out.println(\"Codigo invalido!\");\n" +
+"                    }\n" +
+"                    Atividade();\n");
+                    Iniciar();
+                    break;
+                case 3:
+                    System.out.println("System.out.println(\"\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"      Bem-Vindo a ATIVIDADE 03\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"3) O custo de um carro novo ao consumidor é a soma do custo de fábrica com a \"\n" +
+"                    + \"porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo que o percentual do \"\n" +
+"                    + \"distribuidor seja de 28% e os impostos de 45%, escrever um algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo final ao consumidor\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    porct= 0.28;\n" +
+"                    imp = 0.45;\n" +
+"                    System.out.println(\"INSIRA CUSTO DA FABRICA\");\n" +
+"                    fab = input.nextDouble();\n" +
+"                    fab = fab * porct;\n" +
+"                    imp = fab / imp;\n" +
+"                    c = fab + imp;\n" +
+"                    System.out.println(\"O custo e de \" + c + \"R$\");\n" +
+"                    Atividade();");
+                    Iniciar();
+                    break;
+                case 4:
+                    System.out.println("System.out.println(\"\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"      Bem-Vindo a ATIVIDADE 04\");\n" +
+"                    System.out.println(\"------------------------------------\");\n" +
+"                    System.out.println(\"\");\n" +
+"                    System.out.println(\"4) Crie uma classe para representar uma conta-corrente,\"\n" +
+"                    + \"com métodos para depositar uma quantia, sacar uma quantia e obter o saldo. \"\n" +
+"                    + \"Para cada saque será debitada também uma taxa de operação equivalente \"\n" +
+"                    + \"à 0,5% do valor sacado. Crie, em seguida, uma subclasse desta classe \"\n" +
+"                    + \"anterior para representar uma conta-corrente de um cliente especial. \"\n" +
+"                    + \"Clientes especiais pagam taxas de operação de apenas 0,1% do valor sacado. \"\n" +
+"                    + \"Faça testes com as duas classes e verifique seus resultados.\");\n" +
+"                    System.out.println(\"\");\n" +
+"                     Conta_corrente logg = new Conta_corrente();\n" +
+"                     logg.Conta(); package java_20_05_25;\n" +
+"import java.util.Scanner;\n" +
+"\n" +
+"public class Conta_corrente {\n" +
+"    Scanner input = new Scanner(System.in);\n" +
+"    double valor,valord,valorr;\n" +
+"    int Logi;\n" +
+"    \n" +
+"    public void Conta(){\n" +
+"        System.out.println(\"---------------------------------------\");\n" +
+"        System.out.println(\"CONTA DE ALGUEM\");\n" +
+"        System.out.println(\"---------------------------------------\");\n" +
+"        String.format(\"%.2f\", valor);\n" +
+"        System.out.println(\"Saudo Atual:\" + valor);\n" +
+"        System.out.println(\"---------------------------------------\");\n" +
+"        System.out.println(\"[1] depositar [2] retirar\");\n" +
+"        Logi = input.nextInt();\n" +
+"        switch (Logi) {\n" +
+"            case 1:\n" +
+"                depositar();\n" +
+"                break;\n" +
+"            case 2:\n" +
+"                retirar();\n" +
+"                break;\n" +
+"        }\n" +
+"    }\n" +
+"    \n" +
+"    public void depositar(){\n" +
+"        System.out.println(\"Valor que deseja depositar?\");\n" +
+"        valord = input.nextDouble();\n" +
+"        valor = valord;\n" +
+"        Conta();\n" +
+"    }\n" +
+"    \n" +
+"    public void retirar(){\n" +
+"        System.out.println(\"Valor que deseja retirar?\");\n" +
+"        valorr = input.nextDouble();\n" +
+"        if (valorr <= valor) {\n" +
+"            System.out.println(\"Valor retiradocom sucesso!\");\n" +
+"           valor = valorr - valor;\n" +
+"           Conta();\n" +
+"        } else {\n" +
+"            System.out.println(\"Retirada nao aprovada!\");\n" +
+"            Conta();\n" +
+"        }\n" +
+"    }\n" +
+"}");
+                    Iniciar();
+                    break;
+        }
+            
+    } 
+        public void Read(){
+                System.out.println("Esse codigo foi feito no dia 20\05\2025 na sala maker do Senac Paulista.");
+            }
+}
+
+__________________________________________________________________________________________________________________________________________
+
+Conta_corrente
+__________________________________________________________________________________________________________________________________________
+
+package java_20_05_25;
+import java.util.Scanner;
+
+public class Conta_corrente {
+    Scanner input = new Scanner(System.in);
+    double valor,valord,valorr;
+    int Logi;
+    
+    public void Conta(){
+        System.out.println("---------------------------------------");
+        System.out.println("CONTA DE ALGUEM");
+        System.out.println("---------------------------------------");
+        String.format("%.2f", valor);
+        System.out.println("Saudo Atual:" + valor);
+        System.out.println("---------------------------------------");
+        System.out.println("[1] depositar [2] retirar");
+        Logi = input.nextInt();
+        switch (Logi) {
+            case 1:
+                depositar();
+                break;
+            case 2:
+                retirar();
+                break;
+        }
+    }
+    
+    public void depositar(){
+        System.out.println("Valor que deseja depositar?");
+        valord = input.nextDouble();
+        valor = valord + valor;
+        Conta();
+    }
+    
+    public void retirar(){
+        System.out.println("Valor que deseja retirar?");
+        valorr = input.nextDouble();
+        if (valorr <= valor) {
+            System.out.println("Valor retiradocom sucesso!");
+           valor = valorr - valor;
+           Conta();
+        } else {
+            System.out.println("Retirada nao aprovada!");
+            Conta();
+        }
+    }
+}
+
+__________________________________________________________________________________________________________________________________________
