@@ -1,0 +1,47 @@
+Main
+--------------------------------------------------------
+
+package java21_05_25;
+    public class main {
+        
+}
+
+--------------------------------------------------------
+
+Atividade
+--------------------------------------------------------
+
+package java21_05_25;
+import java.util.Scanner;
+    public class atividade {
+        Scanner input = new Scanner(System.in);
+        int Logi;
+        public void separar () {
+            System.out.println("[1]  |  Atividade 01");
+            System.out.println("[2]  |  Atividade 02");
+            System.out.println("[3]  |  Atividade 03");
+            System.out.println("[4]  |  Atividade 04");
+            System.out.println("[5]  |  Atividade 05");
+            Logi = input.nextInt();
+            switch (Logi) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+                    
+                    break;
+            }
+        }
+}
+
+
+--------------------------------------------------------
