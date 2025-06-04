@@ -1,0 +1,212 @@
+package java_04_06_25;
+
+public class main {
+
+	public static void main(String[] args) {
+		inicio log = new inicio();
+		log.iniciar();
+	}
+	public void m() {
+		System.out.println("import java.util.Scanner;\r\n"
+				+ "\r\n"
+				+ "public class Hospital {\r\n"
+				+ "\r\n"
+				+ "    public static void main(String[] args) {\r\n"
+				+ "        Scanner entrada = new Scanner(System.in);\r\n"
+				+ "        int opcao = 0;\r\n"
+				+ "\r\n"
+				+ "        while (opcao != 5) {\r\n"
+				+ "            System.out.println(\"Menu:\");\r\n"
+				+ "            System.out.println(\"1 - Cadastrar Paciente\");\r\n"
+				+ "            System.out.println(\"2 - Cadastrar Médico\");\r\n"
+				+ "            System.out.println(\"3 - Registrar Consulta\");\r\n"
+				+ "            System.out.println(\"4 - Ver Consultas de Paciente\");\r\n"
+				+ "            System.out.println(\"5 - Sair\");\r\n"
+				+ "            System.out.print(\"Escolha: \");\r\n"
+				+ "            opcao = entrada.nextInt();\r\n"
+				+ "            entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "            if (opcao == 1) {\r\n"
+				+ "                System.out.println(\"Nome do paciente:\");\r\n"
+				+ "                String nomePaciente = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                System.out.println(\"CPF:\");\r\n"
+				+ "                String cpf = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                // Faltando: onde guardar esse paciente?\r\n"
+				+ "                System.out.println(\"Paciente cadastrado (?).\");\r\n"
+				+ "            }\r\n"
+				+ "\r\n"
+				+ "            else if (opcao == 2) {\r\n"
+				+ "                System.out.println(\"Nome do médico:\");\r\n"
+				+ "                String nomeMedico = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                System.out.println(\"Especialidade:\");\r\n"
+				+ "                String especialidade = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                // Faltando: onde guardar esse médico?\r\n"
+				+ "                System.out.println(\"Médico cadastrado (?).\");\r\n"
+				+ "            }\r\n"
+				+ "\r\n"
+				+ "            else if (opcao == 3) {\r\n"
+				+ "                System.out.println(\"CPF do paciente:\");\r\n"
+				+ "                String cpfConsulta = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                System.out.println(\"Nome do médico:\");\r\n"
+				+ "                String medicoConsulta = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                System.out.println(\"Data da consulta:\");\r\n"
+				+ "                String data = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                // Faltando: onde guardar a consulta?\r\n"
+				+ "                System.out.println(\"Consulta registrada (?).\");\r\n"
+				+ "            }\r\n"
+				+ "\r\n"
+				+ "            else if (opcao == 4) {\r\n"
+				+ "                System.out.println(\"CPF do paciente:\");\r\n"
+				+ "                String cpfBusca = entrada.nextLine();\r\n"
+				+ "\r\n"
+				+ "                // Faltando: como buscar as consultas?\r\n"
+				+ "                System.out.println(\"Consultas do paciente (?).\");\r\n"
+				+ "            }\r\n"
+				+ "\r\n"
+				+ "            else if (opcao == 5) {\r\n"
+				+ "                System.out.println(\"Sistema encerrado.\");\r\n"
+				+ "            }\r\n"
+				+ "\r\n"
+				+ "            else {\r\n"
+				+ "                System.out.println(\"Opção inválida.\");\r\n"
+				+ "            }\r\n"
+				+ "        }\r\n"
+				+ "    }\r\n"
+				+ "}");
+	}
+
+}
+-----------------------------------------------------------------------------
+
+  package java_04_06_25;
+import java.util.Scanner;
+
+public class inicio {
+	Scanner input = new Scanner (System.in);
+	String[] nome = new String[10];
+	String[] cpf = new String[10];
+	String[] nomeM = new String[10];
+	String[] cpfM = new String[10];
+	int parametro = 0;
+	public int logi;
+	String Vnome;
+	String Vcpf;
+	int id = 0;
+	
+	public void iniciar() {
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("MEDIcampo");
+		System.out.println("sistema de rede de saude na sua mao");
+		System.out.println("----------------------------------------");
+		System.out.println("Voce ja possui uma conta?");
+		System.out.println("");
+		System.out.println("Inserir 1    |    Cadastrar nova conta");
+		System.out.println("");
+		System.out.println("Inserir 2    |    Logar em conta");
+		System.out.println("");
+		System.out.println("Inserir 3    |    Encerrar programa");
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+			logi = input.nextInt();
+		if (logi == 1) {
+			cadastro();
+		} else {
+			if (logi == 2) {
+				login();
+			} else {
+				if (logi == 3) {
+					System.out.println("O Sistema foi encerrado");
+				} else {
+					System.out.println("Essa opcao nao existe!");
+					iniciar();
+				}
+			}
+		}
+		
+	}
+	public void cadastro() {
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("MEDIcampo - CADASTRO");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+		System.out.println("Inserir 1   |   Cadastrar paciente");
+		System.out.println("");
+		System.out.println("Inserir 2   |   Cadastrar medico");
+		System.out.println("");
+		System.out.println("Inserir 3   |   Sair");
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+			logi = input.nextInt();
+		if (logi == 1) {
+			System.out.println("------------------------------------");
+			System.out.println("INSERIR NOME DE PACIENTE:");
+				nome[id] = input.next();
+			System.out.println("INSERIR CPF:");
+				cpf[id] = input.next();
+			System.out.println("------------------------------------");
+			id = id + 1;
+			System.out.println("Paciente Cadastrado!");	
+			cadastro();
+		} else {
+			if (logi == 2) {
+				System.out.println("------------------------------------");
+				System.out.println("INSERIR NOME DO MEDICO:");
+					nomeM[id] = input.next();
+				System.out.println("INSERIR CPF:");
+					cpfM[id] = input.next();
+				System.out.println("------------------------------------");
+				id = id + 1;
+				System.out.println("Paciente Cadastrado!");	
+				cadastro();
+				
+			} else {
+				if (logi == 3) {
+					iniciar();
+					
+				} else {
+					System.out.println("Essa opacao nao existe!");
+				}
+			}
+		}
+	}
+	public void login() {
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("MEDIcampo - LOGIN");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+		System.out.println("Inserir 1   |   Entrar como paciente");
+		System.out.println("");
+		System.out.println("Inserir 2   |   Entrar como medico");
+		System.out.println("");
+		System.out.println("Inserir 3   |   Sair");
+		System.out.println("");
+		System.out.println("----------------------------------------");
+		System.out.println("");
+			logi = input.nextInt();
+		if (logi == 1) {
+			System.out.println("INSERIR SEU NOME:");
+				Vnome = input.next();
+			System.out.println("INSERIR SEU CPF:");
+				Vcpf = input.next();
+			while (parametro < id) {
+				if (Vnome == nome[parametro] && Vcpf == cpf[parametro]) {
+					System.out.println("Entrada Permitida! Seja Bem-Vindo " + Vnome);
+				} else {
+					parametro++;
+				}
+			} 
+		} else {}
+	}
+}
