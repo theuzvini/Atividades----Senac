@@ -1,0 +1,189 @@
+main
+----------------------------------------------------------
+  package java_05_06_25;
+
+public class Main {
+		public static void main(String[] args) {
+			Recepicionista log = new Recepicionista();
+			log.iniciar();
+		}  
+}
+
+----------------------------------------------------------
+recepicionista
+----------------------------------------------------------
+  package java_05_06_25;
+
+import java.util.Scanner;
+
+public class Recepicionista {
+	public static Scanner input = new Scanner(System.in);
+	Cliente log = new Cliente();
+	public static int logi;
+	public static int id = 0;
+	
+	public static void iniciar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("Bem-Vindo ao TINHOXV");
+		System.out.println("---------------------------------");
+		System.out.println("Campo de insercao:");
+		System.out.println("");
+		System.out.println("Inserir 1   |   Ir para cadastro");
+		System.out.println("");
+		System.out.println("Inserir 2   |   Ir para login   ");
+		System.out.println("");
+		System.out.println("Inserir 3   |   Sair");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+			switch (logi) {
+			case 1:
+				cadastrar();
+				break;
+			case 2:
+				logar();
+				break;
+			case 3:
+				System.exit(0);
+				break;
+				default:
+					System.out.println("Essa opção não existe!");
+			}
+	}
+	public static void cadastrar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("TINHOXV - Cadastro");
+		System.out.println("---------------------------------");
+		System.out.println("Cadastrar como:");
+		System.out.println("");
+		System.out.println("Inserir 1     |     Cliente");
+		System.out.println("");
+		System.out.println("Inserir 2     |     Veterianario");
+		System.out.println("");
+		System.out.println("Inserir 3     |     Sair");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+		switch (logi) {
+		case 1: {
+			Cliente.cadastrarCliente();
+		}
+		case 2: {
+			Veterinario.cadastrarVeterinario();
+		}
+		case 3: {
+			iniciar();
+		}
+		default:
+			System.out.println("Essa opcao nao existe!");
+			iniciar();
+		}
+	}
+	private static void logar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("TINHOXV - Login");
+		System.out.println("---------------------------------");
+		System.out.println("Logar como:");
+		System.out.println("");
+		System.out.println("Inserir 1     |     Cliente");
+		System.out.println("");
+		System.out.println("Inserir 2     |     Veterianario");
+		System.out.println("");
+		System.out.println("Inserir 3     |     Sair");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+		switch (logi) {
+		case 1: {
+			Cliente.cadastrarCliente();
+		}
+		case 2: {
+			Veterinario.cadastrarVeterinario();
+		}
+		case 3: {
+			iniciar();
+		}
+		default:
+			System.out.println("Essa opcao nao existe!");
+			iniciar();
+		}
+	}
+}
+
+----------------------------------------------------------
+animal
+----------------------------------------------------------
+----------------------------------------------------------
+cliente
+----------------------------------------------------------
+  package java_05_06_25;
+import java.util.Scanner;
+
+public class Cliente {
+	public static Scanner input = new Scanner(System.in);
+	public static String[] nomeC = new String[10];
+	public static String[] cpfC = new String[10];
+	public static String[] sexoC = new String[10];
+	public static int[] idadeC = new int[10];
+	public static int id = 0;
+	
+	public static void cadastrarCliente() {
+		System.out.println("Qual seu nome?");
+			nomeC[id] = input.next();
+		System.out.println("Qual seu cpf?");
+			cpfC[id] = input.next();
+		System.out.println("Qual seu sexo?");
+			sexoC[id] = input.next();
+		id++;
+		Recepicionista.cadastrar();
+	}
+}
+----------------------------------------------------------
+veterinario
+----------------------------------------------------------
+  package java_05_06_25;
+import java.util.Scanner;
+
+public class Veterinario {
+	public static Scanner input = new Scanner(System.in);
+	public static String[] especialidade = new String[10];
+	public static String[] nomeV = new String[10];
+	public static String[] sexoV = new String[10];
+	public static String[] cpfV= new String[10];
+	public static int id = 0;
+	
+	public static void cadastrarVeterinario() {
+		System.out.println("Qual seu nome?");
+			nomeV[id] = input.next();
+		System.out.println("Qual seu cpf?");
+			cpfV[id] = input.next();
+		System.out.println("Qual seu sexo?");
+			sexoV[id] = input.next();
+		System.out.println("Qual sua especialidade?");
+			especialidade[id] = input.next();
+		id++;
+		Recepicionista.cadastrar();
+	}
+}
+
+----------------------------------------------------------
+consulta
+----------------------------------------------------------
+----------------------------------------------------------
+administrador
+----------------------------------------------------------
+  package java_05_06_25;
+
+public class Administrador {
+
+}
+
+----------------------------------------------------------
+    
