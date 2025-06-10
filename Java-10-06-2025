@@ -1,0 +1,224 @@
+Main -------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Main {
+	public static Scanner input = new Scanner(System.in);
+	public static Funcionario log1 = new Funcionario();
+	public static Cliente log = new Cliente();
+	public static int logi;
+	
+	public static void main(String[] args) {
+		System.out.println("---- PROGRAMA INICIADO! ----");
+		Iniciar();
+	}
+	
+	public static void Iniciar() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M ----- MENU DE CADASTRO   ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("PARA CLIENTE     |   Inserir [1]");
+		System.out.println("");
+		System.out.println("PARA FUNCIONARIO |   Inserir [2]");
+		System.out.println("");
+		System.out.println("PARA SAIR        |   Inserir [3]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		switch (logi) {
+		case 1: 
+			log.CadastrarC();
+			break;
+		case 2:
+			log1.CadastrarF();
+			break;
+		case 3:
+			System.out.println("---- PROGRAMA ENCERRADO ----");
+			break;
+		default:
+			System.out.println("Essa opcao nao existe!");
+			Iniciar();
+		}
+	}
+
+}
+
+Cliente -------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Cliente {
+	public String[] Nome = new String[10], Email = new String[10],
+	Endereco = new String[10], Telefone = new String[10],
+	Cpf = new String[10], Cnpj = new String[10], Rz = new String[10]; 
+	public static Scanner input = new Scanner(System.in);
+	public static String logi;
+	public static int id = 0;
+	
+	public void CadastrarC() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M ----- CADASTRAR CLIENTE ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Insira as informações abaixo:");
+		System.out.println("");
+		System.out.println("Inserir NOME             |");
+			Nome[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir EMAIL            |");
+			Email[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir ENDERECO         |");
+			Endereco[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir TELEFONE         |");
+			Telefone[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CPF              |");
+			Cpf[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CNPJ (opicional) |");
+			Cnpj[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir Razão Social     |");
+			Rz[id] = input.next();
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Deseja Enviar ir para menu? [sim] ou [nao] ");
+			logi = input.next();
+		switch (logi) {
+		case "sim": {
+			System.out.println("---- ENVIADO COM SUCESSO ----");
+			id = id + 1;
+			Menu.VisualizarC();
+		}
+		case "nao": {
+			System.out.println("---- IR PARA MENU? ----");
+				logi = input.next();
+			switch (logi) {
+			case "sim":
+				Menu.VisualizarC();
+				break;
+			case "nao":
+				System.out.println("---- IR PARA INICIO? ----");
+					logi = input.next();
+				switch (logi) {
+				case "sim":
+					Main.Iniciar();
+					break;
+				case "nao": 
+					Menu.VisualizarC();
+					break;
+				}
+				
+			}
+		}
+		}
+	}
+}
+
+Funcionario -------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Funcionario { 
+	public String[] Nomef = new String[10], Emailf = new String[10], 
+	Enderecof = new String[10], Cargof = new String[10], 
+	Salariof = new String[10], Folgaf = new String[10];
+	public static Scanner input = new Scanner(System.in);
+	public static String logi;
+	public static int id = 0;
+	
+	public void CadastrarF() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M --- CADASTRAR FUNCIONARIO");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Insira as informações abaixo:");
+		System.out.println("");
+		System.out.println("Inserir NOME             |");
+			Nomef[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir EMAIL            |");
+			Emailf[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir ENDERECO         |");
+			Enderecof[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CARGO            |");
+			Cargof[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir SALARIO          |");
+			Salariof[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir FOLGA            |");
+			Folgaf[id] = input.next();
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Deseja Enviar? [sim] ou [nao]");
+			logi = input.next();
+		switch (logi) {
+		case "sim": {
+			System.out.println("---- ENVIADO COM SUCESSO ----");
+			id = id + 1;
+		}
+		case "nao": {
+			System.out.println("---- ENVIO RECUSADO ----");
+			Main.Iniciar();
+		}
+		}
+	}
+}
+
+Menu --------------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Menu {
+	public static Scanner input = new Scanner(System.in);
+	public static int logi;
+	public static void VisualizarC() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M  -----  MENU PRINCIPAL  ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("TABELA DE PRODUTOS    |   Inserir [1]");
+		System.out.println("");
+		System.out.println("PARA SAIR             |   Inserir [2]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		switch (logi) {
+		case 1: 
+			tabelac();
+			break;
+		case 2:
+			System.out.println("---- PROGRAMA ENCERRADO ----");
+			break;
+		default:
+			System.out.println("Essa opcao nao existe!");
+			Main.Iniciar();
+		}
+	} 
+	public static void tabelac() {}
+	public static void tabelaf() {}
+}
