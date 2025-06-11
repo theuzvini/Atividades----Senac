@@ -1,0 +1,507 @@
+Main 05/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_05_06_25;
+
+public class Main {
+		public static void main(String[] args) {
+			Recepicionista log = new Recepicionista();
+			log.iniciar();
+		}  
+}
+
+Recepicionista 05/06/2025 ------------------------------------------------------------------------------------------------
+
+  package java_05_06_25;
+
+import java.util.Scanner;
+
+public class Recepicionista {
+	public static Scanner input = new Scanner(System.in);
+	Veterinario veterinario = new Veterinario();
+	public static int v1 = 1, v2 =2, v3 =3;
+	Cliente cliente = new Cliente();
+	public static int logi;
+	public static int id = 0;
+	
+	public void iniciar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("Bem-Vindo ao TINHOXV");
+		System.out.println("---------------------------------");
+		System.out.println("Campo de insercao:");
+		System.out.println("");
+		System.out.println("Inserir 1   |   Ir para cadastro");
+		System.out.println("");
+		System.out.println("Inserir 2   |   Ir para login   ");
+		System.out.println("");
+		System.out.println("Inserir 3   |   Sair");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				cadastrar();
+			}
+			if (logi == v2) {
+				logar();
+			}
+			if (logi == v3) {
+				System.exit(0);
+			}
+		} catch (Exception e) {
+			System.out.println("- Apenas numeros! -");
+		}
+	}
+	public void cadastrar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("TINHOXV - Cadastro");
+		System.out.println("---------------------------------");
+		System.out.println("Cadastrar como:");
+		System.out.println("");
+		System.out.println("Inserir 1     |     Cliente");
+		System.out.println("");
+		System.out.println("Inserir 2     |     Veterianario");
+		System.out.println("");
+		System.out.println("Inserir 3     |     Sair");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				cliente.cadastrarCliente();
+			}
+			if (logi == v2) {
+				veterinario.cadastrarVeterinario();
+			}
+			if (logi == v3) {
+				iniciar();
+			}
+		} catch (Exception e) {
+			System.out.println("- Apenas numeros! -");
+		}	
+	}
+	private void logar() {
+		System.out.println("");
+		System.out.println("");
+		System.out.println("---------------------------------");
+		System.out.println("TINHOXV - Login");
+		System.out.println("---------------------------------");
+		System.out.println("Logar como:");
+		System.out.println("");
+		System.out.println("Inserir 1     |     Cliente");
+		System.out.println("");
+		System.out.println("Inserir 2     |     Veterianario");
+		System.out.println("");
+		System.out.println("Inserir 3     |     Sair");
+		System.out.println("---------------------------------");
+		System.out.print(": ");
+			logi = input.nextInt();
+		try {
+		if (logi == v1) {
+			cliente.logarCliente();
+		}
+		if (logi == v2) {
+			veterinario.logarVeterinario();
+		}
+		if (logi == v3) {
+			iniciar();
+		}
+		} catch (Exception e) {
+			System.out.println("- Apenas numeros! -");
+		}
+	}
+}
+
+Cliente 05/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_05_06_25;
+import java.util.Scanner;
+
+public class Cliente {
+	public static Scanner input = new Scanner(System.in);
+	public static String[] nomeC = new String[10];
+	public static String[] cpfC = new String[10];
+	public static String[] sexoC = new String[10];
+	public static int[] idadeC = new int[10];
+	public static int id = 0;
+	
+	public void cadastrarCliente() {
+		System.out.println("Qual seu nome?");
+			nomeC[id] = input.next();
+		System.out.println("Qual seu cpf?");
+			cpfC[id] = input.next();
+		System.out.println("Qual seu sexo?");
+			sexoC[id] = input.next();
+		id++;
+		Recepicionista.cadastrar();
+	}
+	public void logarCliente() {
+		
+	}
+}
+
+Veterinario 05/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_05_06_25;
+import java.util.Scanner;
+
+public class Veterinario {
+	public static Scanner input = new Scanner(System.in);
+	public static String[] especialidade = new String[10];
+	Recepicionista recepicionista = new Recepicionista();
+	public static String[] nomeV = new String[10];
+	public static String[] sexoV = new String[10];
+	public static String[] cpfV= new String[10];
+	public static int id = 0;
+	
+	public void cadastrarVeterinario() {
+		System.out.println("Qual seu nome?");
+			nomeV[id] = input.next();
+		System.out.println("Qual seu cpf?");
+			cpfV[id] = input.next();
+		System.out.println("Qual seu sexo?");
+			sexoV[id] = input.next();
+		System.out.println("Qual sua especialidade?");
+			especialidade[id] = input.next();
+		id++;
+		recepicionista.cadastrar();
+	}
+	public void logarVeterinario() {
+		
+	}
+}
+
+Main 10/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_05_06_25;
+
+public class Main {
+		public static void main(String[] args) {
+			Recepicionista log = new Recepicionista();
+			log.iniciar();
+		}  
+}
+
+Inicio 10/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_10_06_25;
+
+import java.util.Scanner;
+
+public class Inicio {
+	public static Scanner input = new Scanner(System.in);
+	public static Funcionario log1 = new Funcionario();
+	public static Cliente log = new Cliente();
+	public static int v1 = 1, v2 = 2, v3 = 3;
+	public static int logi;
+	
+	public void Iniciar() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M ----- MENU DE CADASTRO   ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("PARA CLIENTE     |   Inserir [1]");
+		System.out.println("");
+		System.out.println("PARA FUNCIONARIO |   Inserir [2]");
+		System.out.println("");
+		System.out.println("PARA SAIR        |   Inserir [3]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		try {
+			System.out.print("Insiro: ");
+				logi = input.nextInt();
+			if (logi == v1)  {
+				log.CadastrarC();
+			} 
+			if (logi == v2) {
+				log1.CadastrarF();
+			}
+			if (logi == v3) {
+				System.exit(0);
+			}
+		} catch (Exception e) {
+			System.out.println("-- APENAS NUMEROS --");
+		}
+	}
+}
+
+Cliente 10/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Cliente {
+	public String[] Nome = new String[10], Email = new String[10],
+	Endereco = new String[10], Telefone = new String[10],
+	Cpf = new String[10], Cnpj = new String[10], Rz = new String[10]; 
+	public static Scanner input = new Scanner(System.in);
+	public static int v1 = 1, v2 = 2, v3 = 3;
+	Inicio inicio = new Inicio();
+	Menu menu = new Menu();
+	Main main = new Main();
+	public static int logi;
+	public static int id = 0;
+	
+	public void CadastrarC() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M ----- CADASTRAR CLIENTE ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Insira as informações abaixo:");
+		System.out.println("");
+		System.out.println("Inserir NOME             |");
+			Nome[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir EMAIL            |");
+			Email[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir ENDERECO         |");
+			Endereco[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir TELEFONE         |");
+			Telefone[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CPF              |");
+			Cpf[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CNPJ (opicional) |");
+			Cnpj[id] = input.next();
+		System.out.println("");
+		System.out.println("Inserir Razão Social     |");
+			Rz[id] = input.next();
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+				System.out.println("---- ENVIADO COM SUCESSO ----");
+				id = id + 1;
+				System.out.println("");
+				System.out.println("Onde deseja ir?");
+				System.out.println("PARA MENU    |  Insira [1]");
+				System.out.println("PARA INICIO  |  Insira [2]");
+				System.out.println("PARA VOLTAR  |  Insira [3]");
+					logi = input.nextInt();
+				try {
+					if (logi == v1) {
+						menu.VisualizarC();
+					}
+					if (logi == v2) {
+						inicio.Iniciar();
+					}
+					if (logi == v3) {
+						CadastrarC();
+					}
+				} catch (Exception e) {
+					System.out.println("-- APENAS NUMEROS --");
+				}
+	}
+}
+
+Funcionario 10/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Funcionario { 
+	public String[] Nomef = new String[10], Emailf = new String[10], 
+	Enderecof = new String[10], Cargof = new String[10], 
+	Salariof = new String[10], Folgaf = new String[10];
+	public static Scanner input = new Scanner(System.in);
+	public static int v1 = 1, v2 = 2, v3 = 3;
+	Inicio inicio = new Inicio();
+	Menu menu = new Menu();
+	Main main = new Main();
+	public static int logi;
+	public static int idf = 0;
+	
+	public void CadastrarF() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M --- CADASTRAR FUNCIONARIO");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Insira as informações abaixo:");
+		System.out.println("");
+		System.out.println("Inserir NOME             |");
+			Nomef[idf] = input.next();
+		System.out.println("");
+		System.out.println("Inserir EMAIL            |");
+			Emailf[idf] = input.next();
+		System.out.println("");
+		System.out.println("Inserir ENDERECO         |");
+			Enderecof[idf] = input.next();
+		System.out.println("");
+		System.out.println("Inserir CARGO            |");
+			Cargof[idf] = input.next();
+		System.out.println("");
+		System.out.println("Inserir SALARIO          |");
+			Salariof[idf] = input.next();
+		System.out.println("");
+		System.out.println("Inserir FOLGA            |");
+			Folgaf[idf] = input.next();
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("---- ENVIADO COM SUCESSO ----");
+			idf = idf + 1;
+		System.out.println("");
+		System.out.println("Onde deseja ir?");
+		System.out.println("PARA MENU    |  Insira [1]");
+		System.out.println("PARA INICIO  |  Insira [2]");
+		System.out.println("PARA VOLTAR  |  Insira [3]");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				menu.VisualizarF();
+			}
+			if (logi == v2) {
+				inicio.Iniciar();
+			}
+			if (logi == v3) {
+				CadastrarF();
+			}
+		} catch (Exception e) {
+			System.out.println("-- APENAS NUMEROS --");
+		}
+	}
+}
+
+Menu 10/06/2025 ------------------------------------------------------------------------------------------------
+
+package java_10_06_25;
+import java.util.Scanner;
+
+public class Menu {
+	public static Scanner input = new Scanner(System.in);
+	public static String[] nomep = new String[10];
+	public static int v1 = 1, v2 = 2, v3 = 3, v4 = 4, v5 = 5;
+	Inicio inicio = new Inicio();
+	public static int logi;
+	public static int idp = 0;
+	
+	public void VisualizarC() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M  -----  MENU PRINCIPAL  ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("TABELA DE PRODUTOS    |   Inserir [1]");
+		System.out.println("");
+		System.out.println("PARA SAIR             |   Inserir [2]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				tabelaprodutoc();
+			}
+			if (logi == v2) {
+				inicio.Iniciar();
+			}
+		} catch (Exception e) {
+			System.out.println("-- APENAS NUMEROS --");
+		}
+	} 
+	public void VisualizarF() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M  -----  MENU PRINCIPAL  ");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("TABELA DE PRODUTOS    |   Inserir [1]");
+		System.out.println("");
+		System.out.println("TABELA DE VALORES     |   Inserir [2]");
+		System.out.println("");
+		System.out.println("TABELA DE CLIENTES    |   Inserir [3]");
+		System.out.println("");
+		System.out.println("TABELA DE FUNCIONARIOS|   Inserir [4]");
+		System.out.println("");
+		System.out.println("PARA SAIR             |   Inserir [5]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				tabelaprodutof();
+			}
+			if (logi == v2) {
+				tabelavalor();
+			}
+			if (logi == v3) {
+				tabelacliente();
+			}
+			if (logi == v4) {
+				tabelafuncionario();
+			}
+			if (logi == v5) {
+				VisualizarF();
+			}
+		} catch (Exception e) {
+			System.out.println("-- APENAS NUMEROS --");
+		}
+	}
+	
+	public void tabelaprodutoc() {}
+	
+	public void tabelaprodutof() {
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("-- S.A.X.U.M  -----  TABELA PRODUTO F");
+		System.out.println("-------------------------------------");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.println("Campo de Insercao:");
+		System.out.println("");
+		System.out.println("PARA CRIAR PRODUTO   |   Inserir [1]");
+		System.out.println("");
+		System.out.println("PARA VER PRODUTO     |   Inserir [2]");
+		System.out.println("");
+		System.out.println("PARA VOLTAR          |   Inserir [3]");
+		System.out.println("");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		try {
+			if (logi == v1) {
+				System.out.println("Insira nome do produto:");
+					nomep[idp] = input.next();
+				tabelaprodutof();
+			}
+			if (logi == v2) {
+				int param = 0;
+				System.out.println("--- PRODUTOS CADASTRADOS ---");
+				while (param == idp) {
+					System.out.println(nomep[param]);
+				param++;
+				}
+			}
+			if (logi == v3) {
+				VisualizarF();
+			}
+		} catch (Exception e) {
+			System.out.println("-- APENAS NUMEROS --");
+		}
+	}
+	public void tabelavalor() {}
+	
+	public void tabelacliente() {}
+	
+	public void tabelafuncionario() {}
+}
