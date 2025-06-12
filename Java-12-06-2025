@@ -1,0 +1,273 @@
+Main
+-------------------------------------------------------------------
+
+package java;
+import java.util.Scanner;
+
+public class Main {
+	static Scanner input = new Scanner(System.in);
+	static int logi;
+	public static Atividades atividades = new Atividades();
+	
+	public static void main(String[] args) {
+		separar();
+	}
+	public static void separar() {
+		System.out.println("-----------------------------------");
+		System.out.println("Campo de Atividades:");
+		System.out.println("------------------------------------");
+		System.out.println("insira [1]   |   Acessar Atividade 1");
+		System.out.println("insira [2]   |   Acessar Atividade 2");
+		System.out.println("insira [3]   |   Acessar Atividade 3");
+		System.out.println("insira [4]   |   Acessar Atividade 4");
+		System.out.println("insira [5]   |   Acessar Atividade 5");
+		System.out.println("insira [6]   |   Acessar Atividade 6");
+		System.out.println("insira [7]   |   Acessar Atividade 7");
+		System.out.println("insira [8]   |   Acessar Atividade 8");
+		System.out.println("insira [9]   |   Acessar Atividade 9");
+		System.out.println("insira [10]  |   Acessar Atividade 10");
+		System.out.println("insira [11]  |   Acessar Atividade 11");
+		System.out.println("insira [12]  |   Acessar Atividade 12");
+		System.out.println("-------------------------------------");
+		System.out.print("Insiro: ");
+			logi = input.nextInt();
+		try {
+			if (logi == 1)  {
+				atividades.atv1();
+			}
+			if (logi == 2)  {
+				atividades.atv2();
+			}
+			if (logi == 3)  {
+				atividades.atv3();
+			}
+			if (logi == 4)  {
+				atividades.atv4();
+			}
+			if (logi == 5)  {
+				atividades.atv5();
+			}
+			if (logi == 6)  {
+				atividades.atv6();
+			}
+			if (logi == 7)  {
+				atividades.atv7();
+			}
+			if (logi == 8)  {
+				atividades.atv8();
+			}
+			if (logi == 9)  {
+				atividades.atv9();
+			}
+			if (logi == 10)  {
+				atividades.atv10();
+			}
+			if (logi == 11)  {
+				atividades.atv11();
+			}
+			if (logi == 12)  {
+				atividades.atv12();
+			}
+		} catch (Exception e) {
+			System.out.println("Apenas valores mostrados!");
+		}
+	}
+
+}
+
+-------------------------------------------------------------------
+Atividades
+
+package java;
+import java.util.Scanner;
+
+public class Atividades {
+	Scanner input = new Scanner(System.in);
+	public int inputin;
+	public String inputst;
+	
+	public void atv1() {
+		double salariob, gratific, impost, salario;
+		System.out.println("INSEIR SALARIO-BASE");
+			salariob = input.nextDouble();
+			gratific = salariob * 0.008;
+		try {
+			if (salariob < 1.500) {
+				impost = salariob * 0;
+				salario = gratific + salariob;
+				salario = impost - salariob;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Salário Base:      | "+ salariob);
+				System.out.println("Gratificação:      | "+ gratific);
+				System.out.println("Imposto de Renda:  | "+ impost);
+				System.out.println("Salário a Receber: | "+ salario);
+			}
+			if (salariob > 1.500 && salariob < 3.000) {
+				impost = salariob * 0.008;
+				salario = gratific + salariob;
+				salario = impost - salariob;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Salário Base:      | "+ salariob);
+				System.out.println("Gratificação:      | "+ gratific);
+				System.out.println("Imposto de Renda:  | "+ impost);
+				System.out.println("Salário a Receber: | "+ salario);
+			}
+			if (salariob > 3.000) {
+				impost = salariob * 0.011;
+				salario = gratific + salariob;
+				salario = impost - salariob;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Salário Base:      | "+ salariob);
+				System.out.println("Gratificação:      | "+ gratific);
+				System.out.println("Imposto de Renda:  | "+ impost);
+				System.out.println("Salário a Receber: | "+ salario);
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Insira o valor correto");
+		}
+	}
+	
+	public void atv2() {
+		double valorA = 3.79, valorD = 4.39, valorG = 5.49, total;
+		int litros;
+		System.out.println("[A/a] Alcool   | "+ valorA);
+		System.out.println("[D/d] Diesel   | "+ valorD);
+		System.out.println("[G/g] Gasolina | "+ valorG);
+		System.out.println("Insira o tipo desejado:");
+			inputst = input.next();
+		try {
+			if (inputst == "A" || inputst == "a") {
+				System.out.println("VocÊ escolheu Alcool [A]");
+				System.out.println("Quantos litros deseja?");
+					litros = input.nextInt();
+				total = litros * valorA;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Valor Combustivel: | "+ valorA);
+				System.out.println("Total de Litros:   | "+ litros);
+				System.out.println("Total a Pagar:     | "+ total);
+			}
+			if (inputst == "D" || inputst == "d") {
+				System.out.println("VocÊ escolheu Diesel [D]");
+				System.out.println("Quantos litros deseja?");
+					litros = input.nextInt();
+				total = litros * valorD;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Valor Combustivel: | "+ valorD);
+				System.out.println("Total de Litros:   | "+ litros);
+				System.out.println("Total a Pagar:     | "+ total);
+			}
+			if (inputst == "G" || inputst == "g") {
+				System.out.println("VocÊ escolheu Gasolina [G]");
+				System.out.println("Quantos litros deseja?");
+					litros = input.nextInt();
+				total = litros * valorG;
+				System.out.println("------- RESULTADOS --------");
+				System.out.println("Valor Combustivel: | "+ valorG);
+				System.out.println("Total de Litros:   | "+ litros);
+				System.out.println("Total a Pagar:     | "+ total);
+			}
+		} catch (Exception e) {
+			System.out.println("Insira o valor correto");
+		}
+	}
+	
+	public void atv3() {
+		int familia[] = new int[10];
+		String nome[] = new String[10];
+		String informN[] = new String[10];
+		int informF[] = new int[10];
+		int param = 0;
+		while (param < 10) {
+			System.out.println("INSIRA O NOME DE SUA FAMILIA");
+				nome[param] = input.next();
+			System.out.println("INSIRA A QUANTIDADE DE SUA FAMILIA");
+				familia[param] = input.nextInt();
+			try {
+				if (familia [param] > 5) {
+					informN[param] = nome[param];
+					informF[param] = familia[param];
+					System.out.println("A família "+informN[param]+" possui "+informF[param]+" membros");
+				}
+			} catch (Exception e) {
+				System.out.println("Insira o valor correto");
+			}
+			param ++;
+		}
+	}
+	
+	public void atv4() {
+		String nome[] = new String[10];
+		String servico[] = new String[10];
+		String valor1 = "1", valor2 = "2", valor3 = "3";
+		int quant1 = 0, quant2 = 0, quant3 = 0;
+		int param = 0;
+		int param1 = 0;
+		while (param < 10) {
+			System.out.println("INSIRA SEU NOME:");
+				nome[param] = input.next();
+			System.out.println("Xerox     | [1]");
+			System.out.println("Impressão | [2]");
+			System.out.println("Manutenção| [3]");
+			System.out.println("INSIRA O SERVIÇO ESCOLHIDO:");
+				servico[param] = input.next();
+			param++;
+		while (param1 < 10) {
+			try {
+				if (servico[param].equals(valor1)) {
+					quant1 = quant1 + 1;
+				}
+				if (servico[param].equals(valor2)) {
+					quant2 = quant2 + 1;
+				}
+				if (servico[param].equals(valor3)) {
+					quant3 = quant3 + 1;
+				}
+				
+			} catch (Exception e) {
+				System.out.println("Insira o valor correto");
+			}
+			
+			param1++;
+		}
+		System.out.println("XEROX:      | "+ quant1 +" pessoas");
+		System.out.println("IMPRESSAO:  | "+ quant2 +" pessoas");
+		System.out.println("MANUTANCAO: | "+ quant3 +" pessoas");
+		}
+		
+	}
+	
+	public void atv5() {
+		
+	}
+	
+	public void atv6() {
+		
+	}
+	
+	public void atv7() {
+		
+	}
+	
+	public void atv8() {
+		
+	}
+	
+	public void atv9() {
+		
+	}
+	
+	public void atv10() {
+		
+	}
+	
+	public void atv11() {
+		
+	}
+	
+	public void atv12() {
+		
+	}
+}
+
+-------------------------------------------------------------------
