@@ -5,11 +5,12 @@ public class Usuarios {
 	Home home = new Home();
 	public static String[] nomeC = new String[10], cpfC = new String[10];
 	public static String nomeV, cpfV;
-	public static String UserC, UserA;
+	public static String UserC, UserA, CpfC, CpfA;
 	public static String[] nomeA = new String[10], cpfA = new String[10];
 	public static int logi, idC = 0, idA = 0, idV = 0;
 	Scanner input = new Scanner(System.in);
 	public int v1 = 1,v2 = 2,v3 = 3,v4 =4;
+	public int verific = 0;
 	
 	public void Separar() {
 		System.out.println("_________________________________________");
@@ -18,31 +19,31 @@ public class Usuarios {
 		System.out.println("|                                       |");
 		System.out.println("| ------------------------------------- |");
 		System.out.println("|                                       |");
-		System.out.println("| INSERIR [ 1 ]   |   Area de Cadastro //ATALHO C |");
+		System.out.println("| INSERIR [ 1 ]   |   Area de Cadastro  |");
 		System.out.println("|                                       |");
-		System.out.println("| INSERIR [ 2 ]   |   Area de Login    //ATALHO A |");
+		System.out.println("| INSERIR [ 2 ]   |   Area de Login     |");
 		System.out.println("|                                       |");
 		System.out.println("| INSERIR [ 3 ]   |   Fechar Programa   |");
 		System.out.println("|                                       |");
 		System.out.println("_________________________________________");
 		System.out.println("----");
 			logi = input.nextInt();
-		//try {
+		try {
 			if (logi == v1) {
-				//Cadastrar();
-				home.MenuC();
+				Cadastrar();
+				//home.MenuC();
 			}
 			if (logi == v2) {
-				//Logar();
-				home.MenuA();
+				Logar();
+				//home.MenuA();
 			}
 			if (logi == v3) {
 				System.out.println("-- Sistema diz: SISTEMA ENCERRADO --");
 				System.exit(0);
 			}
-		//} catch (Exception e) {
-		//	System.out.println("-- Sistema diz: INSIRA APENAS NUMEROS --");
-		//}
+		} catch (Exception e) {
+			System.out.println("-- Sistema diz: INSIRA APENAS NUMEROS --");
+		}
 	}
 	
  	public void Cadastrar() {
@@ -126,7 +127,6 @@ public class Usuarios {
 			logi = input.nextInt();
 		try {
 			if (logi == v1) {
-				int verific = 0;
 				System.out.println("_________________________________________");
 				System.out.println("|                                       |");
 				System.out.println("|        SAAS --- LOGAR CLIENTE         |");
@@ -144,6 +144,7 @@ public class Usuarios {
 				for (int i = 0; i < idC; i++) {
 					if (nomeC[i].equalsIgnoreCase(nomeV) && cpfC[i].equals(cpfV)) {
 						UserC = nomeC[i];
+						CpfC = cpfC[i];
 						verific = verific + 1;
 					} 	
 				}
@@ -156,7 +157,6 @@ public class Usuarios {
 				}
 			}
 			if (logi == v2) {
-				int verific = 0;
 				System.out.println("_________________________________________");
 				System.out.println("|                                       |");
 				System.out.println("|         SAAS --- LOGAR ADMIN          |");
@@ -174,12 +174,13 @@ public class Usuarios {
 				for (int i = 0; i < idC; i++) {
 					if (nomeA[i].equalsIgnoreCase(nomeV) && cpfA[i].equals(cpfV)) {
 						UserA = nomeA[i];
+						CpfA = cpfA[i];
 						verific = verific + 1;
 					} 	
 				}
 				if (verific == 1) {
 					System.out.println("Você entrou como "+ UserA);
-					//home.MenuA();
+					home.MenuA();
 				} else {
 					System.out.println("Nome ou Cpf invalidos!");
 					Logar();

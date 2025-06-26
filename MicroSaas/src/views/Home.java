@@ -2,13 +2,12 @@ package views;
 import java.util.Scanner;
 
 public class Home {
-	Clientes clientes = new Clientes();
 	public int v1 = 1,v2 = 2,v3 = 3,v4 =4, v5 = 5;
 	Scanner input = new Scanner(System.in);
 	public int logi;
 	
 	public void MenuC() {
-		String Usuario = "No momento Null"; //Usuarios.UserC.toUpperCase();
+		String Usuario = Usuarios.UserC.toUpperCase();
 		System.out.println("___________________________________________________________________________");
 		System.out.println("|                                                                         |");
 		System.out.println("|   SEJA BEM-VINDO  "+ Usuario +"       ° U ° !                           ");
@@ -27,7 +26,7 @@ public class Home {
 		logi = input.nextInt();
 		switch (logi) {
 		case 1: 
-			clientes.PerfilC();
+			Clientes.PerfilC();
 			break;
 		
 		case 2: 
@@ -53,7 +52,7 @@ public class Home {
 	}
 	
 	public void MenuA() {
-		String Adm = "No momento Null";//Usuarios.UserA.toUpperCase();
+		String Adm = Usuarios.UserA.toUpperCase();
 		System.out.println("______________________________________________________________________________________");
 		System.out.println("|                                                                                    |");
 		System.out.println("|   SEJA BEM-VINDO  "+ Adm +"       ° U ° !                                      ");
@@ -72,7 +71,7 @@ public class Home {
 		logi = input.nextInt();
 		switch (logi) {
 		case 1: 
-			clientes.PerfilA();
+			Clientes.PerfilA();
 			break;
 		
 		case 2: 
@@ -80,7 +79,7 @@ public class Home {
 			break;
 		
 		case 3: 
-			clientes.Listar();
+			Clientes.Listar();
 			break;
 		
 		case 4: 

@@ -2,13 +2,16 @@ package views;
 import java.util.Scanner;
 
 public class Clientes {
-	Scanner input = new Scanner(System.in);
-	public int v1 = 1,v2 = 2,v3 = 3,v4 = 4;
-	public int logi;
+	static Scanner input = new Scanner(System.in);
+	public static int v1 = 1,v2 = 2,v3 = 3,v4 = 4;
+	static public int logi;
+	static public String DescricaoA, DescricaoC;
 	
-	public void PerfilC() {
+	public static void PerfilC() {
+		String Usuario = Usuarios.UserC.toUpperCase(), CpfUSer = Usuarios.CpfC;
+		Assinaturas assinaturas = new Assinaturas();
+		Usuarios usuarios = new Usuarios();
 		Home home = new Home();
-		String Usuario = "No momento Null";//Usuarios.UserC.toUpperCase();
 		System.out.println("______________________________________________________________");
 		System.out.println("|                                                            |");
 		System.out.println("|  ( FOTO ) "+ Usuario +"                                    |");
@@ -16,10 +19,7 @@ public class Clientes {
 		System.out.println("| ---------------------------------------------------------- |");
 		System.out.println("|                                                            |");
 		System.out.println("| Descrição:                                                 |");
-		//System.out.println("  "+Descricao+"|                                             |"
-		//		+ "                                                                      |"
-		//		+ "                                                                      |"
-		//		+ "                                                                      |");
+		System.out.println("|           		"+ DescricaoC +"							  ");
 		System.out.println("|                                                            |");
 		System.out.println("|                                                            |");
 		System.out.println("| [ 1 ] Editar Perfil     [ 2 ] Minhas Assinaturas           |");
@@ -28,16 +28,17 @@ public class Clientes {
 		System.out.println("|                                                            |");
 		System.out.println("______________________________________________________________");
 		System.out.println("----");
-		logi = input.nextInt();
+			logi = input.nextInt();
 		switch (logi) {
 		case 1: 
-			
+			EditarC();
 			break;
 		case 2: 
-			
+			assinaturas.AssinaturaC();
 			break;
 		case 3: 
-	
+			System.out.println("O Usuario "+ Usuario + " saiu da conta!");
+			usuarios.Separar();
 			break;
 		case 4: 
 			home.MenuC();
@@ -48,9 +49,11 @@ public class Clientes {
 		}
 	}
 	
-	public void PerfilA() {
+	public static void PerfilA() {
+		String Adm = Usuarios.UserA.toUpperCase(), CpfAdm = Usuarios.CpfA;
+		Assinaturas assinaturas = new Assinaturas();
+		Usuarios usuarios = new Usuarios();
 		Home home = new Home();
-		String Adm = "No momento Null";//Usuarios.UserA.toUpperCase();
 		System.out.println("______________________________________________________________");
 		System.out.println("|                                                            |");
 		System.out.println("|  ( FOTO ) "+ Adm +"                                    |");
@@ -58,11 +61,7 @@ public class Clientes {
 		System.out.println("| ---------------------------------------------------------- |");
 		System.out.println("|                                                            |");
 		System.out.println("| Descrição:                                                 |");
-		//System.out.println("  "+Descricao+"|                                             |"
-		//		+ "                                                                      |"
-		//		+ "                                                                      |"
-		//		+ "                                                                      |");
-		System.out.println("|                                                            |");
+		System.out.println("|           		"+ DescricaoA +"							  ");
 		System.out.println("|                                                            |");
 		System.out.println("| [ 1 ] Editar Perfil     [ 2 ] Minhas Assinaturas           |");
 		System.out.println("|                                                            |");
@@ -70,16 +69,16 @@ public class Clientes {
 		System.out.println("|                                                            |");
 		System.out.println("______________________________________________________________");
 		System.out.println("----");
-		logi = input.nextInt();
+			logi = input.nextInt();
 		switch (logi) {
 		case 1: 
-			
+			EditarA();
 			break;
 		case 2: 
-			
+			assinaturas.AssinaturaC();
 			break;
 		case 3: 
-	
+			usuarios.Separar();
 			break;
 		case 4: 
 			home.MenuC();
@@ -90,7 +89,7 @@ public class Clientes {
 		}
 	}
 	
-	public void Listar() {
+	public static void Listar() {
 		Home home = new Home();
 		System.out.println("_____________________________________________");
 		System.out.println("|                                           |");
@@ -103,15 +102,72 @@ public class Clientes {
 		System.out.println("| [ 2 ] Voltar ao Menu                      |");
 		System.out.println("|                                           |");
 		System.out.println("_____________________________________________");
-		logi = input.nextInt();
+			logi = input.nextInt();
 		if (logi == 1) {
 			System.out.println("-----------------------------------");
 			for (int i = 0; i < Usuarios.idC; i++) {
 				System.out.println("|                                     |");
-				System.out.println("|Nome: "+Usuarios.nomeC[i]+"Cpf: "+Usuarios.cpfC+" |"); 	
+				System.out.println("|Nome: "+Usuarios.nomeC[i]+" Cpf: ***            |"); 	
 			}
 			System.out.println("-----------------------------------");
 			home.MenuA();
 		}
+	}
+	
+	public static void EditarC() {
+		String Usuario = Usuarios.UserC.toUpperCase(), CpfUSer = Usuarios.CpfC;
+		System.out.println("______________________________________________________________");
+		System.out.println("|                                                            |");
+		System.out.println("|  Nome de Usuario:   "+ Usuario +"                           ");
+		System.out.println("|  ------                                                    |");
+		System.out.println("|  Cpf de Usuario:    "+ CpfUSer +"                           ");
+		System.out.println("|  ------                                                    |");
+		System.out.println("|  Descrição Atual:                                          |");
+		System.out.println("|           		"+ DescricaoC +"							  ");
+		System.out.println("| ---------------------------------------------------------- |");
+		System.out.println("|                                                            |");
+		System.out.println("|  [ 1 ]| Alterar descrição          [ 2 ] Voltar Perfil     |");
+		System.out.println("|                                                            |");
+		System.out.println("______________________________________________________________");
+			logi = input.nextInt();
+			input.nextLine();
+		if (logi == v1) {
+			System.out.println("Insira nova descrição:");
+			DescricaoC = input.nextLine();
+		} 
+		if (logi == v2) {
+			PerfilC();
+		} 
+		PerfilC();
+	}
+	
+	public static void EditarA() {
+		String Adm = Usuarios.UserA.toUpperCase(), CpfAdm = Usuarios.CpfA;  
+		System.out.println("______________________________________________________________");
+		System.out.println("|                                                            |");
+		System.out.println("|  Nome de Usuario:   "+ Adm     +"                           ");
+		System.out.println("|  ------                                                    |");
+		System.out.println("|  Cpf de Usuario:    "+ CpfAdm +"                            ");
+		System.out.println("|  ------                                                    |");
+		System.out.println("|  Descrição Atual:                                          |");
+		System.out.println("|           		"+ DescricaoA +"							  ");
+		System.out.println("| ---------------------------------------------------------- |");
+		System.out.println("|                                                            |");
+		System.out.println("|  [ 1 ]| Alterar descrição          [ 2 ] Voltar Perfil     |");
+		System.out.println("|                                                            |");
+		System.out.println("______________________________________________________________");
+			logi = input.nextInt();
+			input.nextLine();
+			if (logi == v1) {
+				System.out.println("Insira nova descrição:");
+				DescricaoA = input.nextLine();
+				EditarC();
+			} else {
+				if (logi == v2) {
+					PerfilC();
+				} else {}
+				System.out.println("sistema diz: - OPçÃO NÃO EXISTE! -");
+				EditarC();
+			}
 	}
 }
