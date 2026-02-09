@@ -1,0 +1,15 @@
+body{
+    margin: 1;
+    padding: 1;
+    background-color: rgba(217, 217, 217, 0.821);
+}
+
+.container_1{
+    
+    background-image: url(../img/Webpass_img1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    height: 700px;
+    border-radius: 30px;
+}
