@@ -1,15 +1,26 @@
 body{
     margin: 1;
-    padding: 1;
-    background-color: rgba(217, 217, 217, 0.821);
+    padding: 0;
+    background-color: rgba(249, 250, 253, 0.904);
+}
+.container_1{
+    background-color: rgb(218, 228, 255);
+    border-radius: 20px;
+    height: 20vh;
+    
+}
+.navbar{
+    
+}
+.navbar img{
+    width: 22%;
+    height: 22%;
+}
+.navbar text{
+    width: 80px;
 }
 
-.container_1{
-    
-    background-image: url(../img/Webpass_img1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-clip: content-box;
-    height: 700px;
-    border-radius: 30px;
-}
+
+
+.container_2{}
+.container_3{}
