@@ -1,0 +1,104 @@
+// 11
+// void main(){
+//   print("Estou aprendendo Dart para criar aplicativos mobile.");
+// }
+
+// 12
+// void main(){
+//   String nomedoUsuario = 'Matheus123';
+//   int idade = 17;
+//   String cidade = 'Paulista';
+//   String curso = 'Analise e Desenvolvimento de Sistemas';
+  
+//   print("$nomedoUsuario , $idade , $cidade , $curso ");
+// }
+
+// 13
+// void main(){
+//   String nomedeumAplicativo = 'MacTz';
+//   String categoriadoAplicativo = 'Mobile';
+//   int quantidadedeUsuarios = 154;
+//   bool aplicativoAtivo = true;
+  
+//   print("Nome: $nomedeumAplicativo , Categoria: $categoriadoAplicativo , Quantidade: $quantidadedeUsuarios Ativo: $aplicativoAtivo");
+// }
+
+// //14
+// void main(){
+//   int nota1 = 10;
+//   int nota2 = 8;
+//   double media = (nota1 + nota2)/2;
+
+//   print("A média do aluno é $media");
+// }
+
+// 15
+// void main(){
+//   int idadedoUsuario = 18;
+//   String situacao;
+//   if (idadedoUsuario >= 18){
+//     situacao = 'Cadastro Permitido';
+//   } else {
+//     situacao = 'Cadastro não Permitido';
+//   }
+    
+//   print("Situação: $situacao");
+// }
+
+// 16
+// void main(){
+//   int senhaCorreta = 12345678;
+//   int senhaErrada = 12334456;
+//   if (senhaCorreta == senhaErrada) {
+//     print("Login realizado com sucesso.");
+//   } else {
+//      print("Senha incorreta."); 
+//   }
+// }
+
+// 17
+// void main(){
+//   int quantidadedeProduto = 0;
+//   if (quantidadedeProduto > 0) {
+//     print("Produto disponível.");
+//   } else {
+//     print("Produto indisponível."); 
+//   }
+// }
+
+// 18
+// void main(){
+//   double saldoUsuario = 12.50;
+//   double valordaCompra = 11.23;
+//   if (saldoUsuario >= valordaCompra) {
+//     print("Compra aprovada.");
+//   } else {
+//     print("Saldo insuficiente."); 
+//   }
+// }
+
+// 19
+// void main(){
+//   int numeroInteiro = -2;
+//   if (numeroInteiro >= 0) {
+//     print("Número positivo ou zero.");
+//   } else {
+//     print("Número negativo.");
+//   };
+// }
+
+// 20
+// void main(){
+//   String nomedeUsuario = 'Felipe Junior';
+//   int idadedeUsuario = 35;
+//   bool contaAtiva = false;
+//   String situacao;
+  
+//   if (contaAtiva = contaAtiva) {
+//     situacao = "Usuário ativo no sistema.";
+//   } else {
+//     situacao = "Usuário inativo no sistema.";
+//   }
+  
+//   print("Situação do Usuário: $situacao , Nome: $nomedeUsuario , Idade: $idadedeUsuario");
+// }
