@@ -1,0 +1,175 @@
+1 — Lista de produtos: 
+
+A) Crie uma lista de produtos com os seguintes itens:
+
+Arroz, Feijão, Macarrão, Leite, Café
+
+B) O que deve ser feito:
+
+Criar a lista.
+Adicionar mais dois produtos.
+Mostrar todos os produtos com forEach.
+Mostrar todos os produtos com for, exibindo a posição.
+Remover um produto pelo nome.
+Remover um produto pelo índice.
+Mostrar a quantidade final de produtos.
+Verificar se a lista está vazia.
+
+2) Uma escola precisa organizar uma lista simples com os nomes dos alunos presentes em uma aula.
+
+O programa deve:
+
+A) Criar uma lista vazia chamada presentes.
+B) Adicionar pelo menos 5 nomes.
+C) Exibir todos os nomes com forEach.
+D) Exibir os nomes numerados com for.
+E) Buscar se um aluno específico está na lista.
+F) Remover um aluno que saiu da sala.
+G) Mostrar a lista atualizada.
+H) Mostrar o total de alunos presentes.
+
+3)Crie uma lista de números e use for para imprimir apenas os números pares.
+
+4) Crie uma lista de nomes e use forEach para imprimir uma mensagem de boas-vindas para cada nome.
+
+5) Crie uma lista de notas e calcule a média da turma.
+6) Crie uma lista de produtos e remova todos os produtos com nome igual a "Indisponível".
+
+7) Crie uma lista de idades e conte quantas pessoas têm idade maior ou igual a 18.
+
+8) Crie uma lista de palavras e mostre apenas as palavras com mais de 5 letras.
+
+9) Crie uma lista de preços e aplique um desconto de 10% em todos os valores usando for
+
+
+Códigos de Exemplos da Aula
+
+main.dart
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   print(nomes);
+// }
+
+// # Inserindo elementos em uma lista
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   nomes.add('Daniela');
+
+//   print(nomes);
+// }
+
+// Acessando elementos pelo índice
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   print(nomes[0]);
+//   print(nomes[1]);
+//   print(nomes[2]);
+// }
+
+// Entendendo o tamanho da lista com length
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   print(nomes.length);
+// }
+
+// Percorrendo uma lista com for
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   for (int i = 0; i < nomes.length; i++) {
+//     print(nomes[i]);
+//   }
+// }
+
+// Mostrando índice e valor com for
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   for (int i = 0; i < nomes.length; i++) {
+//     print('Índice $i: ${nomes[i]}');
+//   }
+// }
+
+// Percorrendo uma lista com forEach
+
+// void main() {
+//   List<String> nomes = ['Ana', 'Bruno', 'Carlos'];
+
+//   nomes.forEach((nome) {
+//     print(nome);
+//   });
+// }
+
+// Inserindo vários elementos com for
+
+// void main() {
+//   List<int> numeros = [];
+
+//   for (int i = 1; i <= 5; i++) {
+//     numeros.add(i);
+//   }
+
+//   print(numeros);
+// }
+
+// Inserindo nomes em uma lista
+// void main() {
+//   List<String> alunos = [];
+//   List<int> notas = [];
+//   alunos.add('Maria');
+//   alunos.add('João');
+//   alunos.add('Pedro');
+//   notas.add(10);
+
+//   print(alunos[0]);
+//   print(notas[0]);
+// }
+cadastro.dart
+
+void main() {
+  List<String> alunos = [];
+
+  alunos.add('Ana');
+  alunos.add('Bruno');
+  alunos.add('Carlos');
+  alunos.add('Daniela');
+
+  print('Lista inicial:');
+  alunos.forEach((aluno) {
+    print(aluno);
+  });
+
+  print('\nRemovendo Bruno...');
+  alunos.remove('Bruno');
+
+  print('\nLista após remoção:');
+  for (int i = 0; i < alunos.length; i++) {
+    print('Posição $i: ${alunos[i]}');
+  }
+
+  String procurado = 'Carlos';
+  bool encontrou = false;
+
+  for (int i = 0; i < alunos.length; i++) {
+    if (alunos[i] == procurado) {
+      encontrou = true;
+      print('\n$procurado encontrado na posição $i.');
+      break;
+    }
+  }
+
+  if (!encontrou) {
+    print('\n$procurado não foi encontrado.');
+  }
+
+  print('\nQuantidade de alunos: ${alunos.length}');
+}   
